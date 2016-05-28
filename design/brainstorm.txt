@@ -1,0 +1,73 @@
+Turn based strategy
+
+Fire Emblem
+	likes
+		Partners - two units combine
+		Show enemy’s movement range
+		Show stats before battle, pre battle information
+		good music
+	dislikes
+		permanent death
+		new classes starting at level 1
+		long turns
+		probability
+	fixes
+		no permanent death
+		level should show overall strength
+		turn, move one unit & use energy for actions
+		keep probability minimal for the enemy and most characters
+
+Final Fantasy Tactics
+	likes
+		short turns
+		choose reaction to attacks
+	dislikes
+		Judge (Advance)
+	fixes
+		no judges
+
+Take away
+		no judges
+		no permanent death
+		level should show overall strength
+		turn, move one unit
+		use energy for actions (replenishes over time)
+		keep probability minimal for the enemy and most characters
+	(good music, but don’t know how)
+		Show enemy’s movement range
+		Show stats before battle, pre battle information
+		choose reaction to attacks
+	(Partners too complicated)
+
+Other features
+	top down
+	story journal
+
+Target Audience
+	[older generation of gamers]
+	short play sessions
+	play deeply
+
+Platforms:
+	First
+		iOS, Android
+		Windows, OS X - Steam
+	Later (Not so necessary)
+		Nintendo NX - Market visibility
+		3DS
+
+Narrative:
+	scifi
+	futuristic distopia
+	robots & robot haters
+	laser based melee weapons
+	plasma? based armor
+	pixel art
+
+Game Engine:
+	Cocos 2D X for Windows, OS X, iOS, Android
+	use a wrapper layer to port to additional platforms
+
+Monetization
+	Free play mode
+	Sell the story
