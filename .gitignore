@@ -3,3 +3,7 @@
 *.xcuserstate
 proj.ios_mac/plasma.xcodeproj/project.xcworkspace/
 proj.ios_mac/plasma.xcodeproj/xcuserdata/
+
+# Android
+*.apk
+proj.android/obj/
