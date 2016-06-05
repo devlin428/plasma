@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DB2109E1D04F0D60092E721 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2109D1D04F0D60092E721 /* main.cpp */; };
+		1DB210A91D04F1880092E721 /* TestMatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210A71D04F1880092E721 /* TestMatch.cpp */; };
+		1DB210AF1D04F1DC0092E721 /* Match.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210AB1D04F1DC0092E721 /* Match.cpp */; };
+		1DB210B01D04F1DC0092E721 /* MatchContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210AD1D04F1DC0092E721 /* MatchContext.cpp */; };
+		1DB210C21D04F23F0092E721 /* Operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210B21D04F23F0092E721 /* Operations.cpp */; };
+		1DB210C31D04F23F0092E721 /* Vector2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210B41D04F23F0092E721 /* Vector2d.cpp */; };
+		1DB210C41D04F23F0092E721 /* Vector2dTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210B61D04F23F0092E721 /* Vector2dTemplate.cpp */; };
+		1DB210C51D04F23F0092E721 /* Vector3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210B91D04F23F0092E721 /* Vector3d.cpp */; };
+		1DB210C61D04F23F0092E721 /* Vector3dTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210BB1D04F23F0092E721 /* Vector3dTemplate.cpp */; };
+		1DB210C71D04F23F0092E721 /* VectorInt2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210BE1D04F23F0092E721 /* VectorInt2d.cpp */; };
+		1DB210C81D04F23F0092E721 /* VectorInt3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210C01D04F23F0092E721 /* VectorInt3d.cpp */; };
+		1DB210CE1D04F25F0092E721 /* CollisionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210CA1D04F25F0092E721 /* CollisionLayer.cpp */; };
+		1DB210CF1D04F25F0092E721 /* IPiece.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210CC1D04F25F0092E721 /* IPiece.cpp */; };
+		1DB210DA1D04F2810092E721 /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210D11D04F2810092E721 /* Board.cpp */; };
+		1DB210DB1D04F2810092E721 /* IBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210D41D04F2810092E721 /* IBoard.cpp */; };
+		1DB210DC1D04F2810092E721 /* IBoardLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210D61D04F2810092E721 /* IBoardLayout.cpp */; };
+		1DB210DD1D04F2810092E721 /* RouteSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210D81D04F2810092E721 /* RouteSet.cpp */; };
+		1DB210E71D04F29E0092E721 /* Messaging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210DF1D04F29E0092E721 /* Messaging.cpp */; };
+		1DB210E81D04F29E0092E721 /* ReferenceCountedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210E11D04F29E0092E721 /* ReferenceCountedObject.cpp */; };
+		1DB210E91D04F29E0092E721 /* StringHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210E31D04F29E0092E721 /* StringHash.cpp */; };
+		1DB210EA1D04F29E0092E721 /* UserInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210E51D04F29E0092E721 /* UserInfo.cpp */; };
+		1DB210EE1D04F2D40092E721 /* IPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210EC1D04F2D40092E721 /* IPlayer.cpp */; };
+		1DB211021D04F3120092E721 /* IMatchCondition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210EF1D04F3120092E721 /* IMatchCondition.cpp */; };
+		1DB211031D04F3120092E721 /* IPhaseRules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210F11D04F3120092E721 /* IPhaseRules.cpp */; };
+		1DB211041D04F3120092E721 /* MatchConditionAnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210F31D04F3120092E721 /* MatchConditionAnd.cpp */; };
+		1DB211051D04F3120092E721 /* MatchConditionBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210F51D04F3120092E721 /* MatchConditionBuilder.cpp */; };
+		1DB211061D04F3120092E721 /* MatchConditionFunctionPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210F81D04F3120092E721 /* MatchConditionFunctionPointer.cpp */; };
+		1DB211071D04F3120092E721 /* MatchConditionNot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FA1D04F3120092E721 /* MatchConditionNot.cpp */; };
+		1DB211081D04F3120092E721 /* MatchConditionOr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */; };
+		1DB211091D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1DB210981D04F0D60092E721 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1DB2109A1D04F0D60092E721 /* tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DB2109D1D04F0D60092E721 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1DB210A71D04F1880092E721 /* TestMatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMatch.cpp; sourceTree = "<group>"; };
+		1DB210A81D04F1880092E721 /* TestMatch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestMatch.hpp; sourceTree = "<group>"; };
+		1DB210AB1D04F1DC0092E721 /* Match.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Match.cpp; path = ../rules/Match.cpp; sourceTree = "<group>"; };
+		1DB210AC1D04F1DC0092E721 /* Match.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Match.hpp; path = ../rules/Match.hpp; sourceTree = "<group>"; };
+		1DB210AD1D04F1DC0092E721 /* MatchContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatchContext.cpp; path = ../rules/MatchContext.cpp; sourceTree = "<group>"; };
+		1DB210AE1D04F1DC0092E721 /* MatchContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MatchContext.hpp; path = ../rules/MatchContext.hpp; sourceTree = "<group>"; };
+		1DB210B21D04F23F0092E721 /* Operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Operations.cpp; path = ../../../kettle/math/Operations.cpp; sourceTree = "<group>"; };
+		1DB210B31D04F23F0092E721 /* Operations.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Operations.hpp; path = ../../../kettle/math/Operations.hpp; sourceTree = "<group>"; };
+		1DB210B41D04F23F0092E721 /* Vector2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector2d.cpp; path = ../../../kettle/math/Vector2d.cpp; sourceTree = "<group>"; };
+		1DB210B51D04F23F0092E721 /* Vector2d.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Vector2d.hpp; path = ../../../kettle/math/Vector2d.hpp; sourceTree = "<group>"; };
+		1DB210B61D04F23F0092E721 /* Vector2dTemplate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector2dTemplate.cpp; path = ../../../kettle/math/Vector2dTemplate.cpp; sourceTree = "<group>"; };
+		1DB210B71D04F23F0092E721 /* Vector2dTemplate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Vector2dTemplate.hpp; path = ../../../kettle/math/Vector2dTemplate.hpp; sourceTree = "<group>"; };
+		1DB210B81D04F23F0092E721 /* Vector2dTemplate.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vector2dTemplate.inl; path = ../../../kettle/math/Vector2dTemplate.inl; sourceTree = "<group>"; };
+		1DB210B91D04F23F0092E721 /* Vector3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector3d.cpp; path = ../../../kettle/math/Vector3d.cpp; sourceTree = "<group>"; };
+		1DB210BA1D04F23F0092E721 /* Vector3d.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Vector3d.hpp; path = ../../../kettle/math/Vector3d.hpp; sourceTree = "<group>"; };
+		1DB210BB1D04F23F0092E721 /* Vector3dTemplate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector3dTemplate.cpp; path = ../../../kettle/math/Vector3dTemplate.cpp; sourceTree = "<group>"; };
+		1DB210BC1D04F23F0092E721 /* Vector3dTemplate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Vector3dTemplate.hpp; path = ../../../kettle/math/Vector3dTemplate.hpp; sourceTree = "<group>"; };
+		1DB210BD1D04F23F0092E721 /* Vector3dTemplate.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vector3dTemplate.inl; path = ../../../kettle/math/Vector3dTemplate.inl; sourceTree = "<group>"; };
+		1DB210BE1D04F23F0092E721 /* VectorInt2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorInt2d.cpp; path = ../../../kettle/math/VectorInt2d.cpp; sourceTree = "<group>"; };
+		1DB210BF1D04F23F0092E721 /* VectorInt2d.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VectorInt2d.hpp; path = ../../../kettle/math/VectorInt2d.hpp; sourceTree = "<group>"; };
+		1DB210C01D04F23F0092E721 /* VectorInt3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorInt3d.cpp; path = ../../../kettle/math/VectorInt3d.cpp; sourceTree = "<group>"; };
+		1DB210C11D04F23F0092E721 /* VectorInt3d.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VectorInt3d.hpp; path = ../../../kettle/math/VectorInt3d.hpp; sourceTree = "<group>"; };
+		1DB210CA1D04F25F0092E721 /* CollisionLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionLayer.cpp; path = ../pieces/CollisionLayer.cpp; sourceTree = "<group>"; };
+		1DB210CB1D04F25F0092E721 /* CollisionLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CollisionLayer.hpp; path = ../pieces/CollisionLayer.hpp; sourceTree = "<group>"; };
+		1DB210CC1D04F25F0092E721 /* IPiece.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IPiece.cpp; path = ../pieces/IPiece.cpp; sourceTree = "<group>"; };
+		1DB210CD1D04F25F0092E721 /* IPiece.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IPiece.hpp; path = ../pieces/IPiece.hpp; sourceTree = "<group>"; };
+		1DB210D11D04F2810092E721 /* Board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Board.cpp; path = ../board/Board.cpp; sourceTree = "<group>"; };
+		1DB210D21D04F2810092E721 /* Board.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Board.hpp; path = ../board/Board.hpp; sourceTree = "<group>"; };
+		1DB210D31D04F2810092E721 /* BoardTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardTypes.h; path = ../board/BoardTypes.h; sourceTree = "<group>"; };
+		1DB210D41D04F2810092E721 /* IBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IBoard.cpp; path = ../board/IBoard.cpp; sourceTree = "<group>"; };
+		1DB210D51D04F2810092E721 /* IBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IBoard.hpp; path = ../board/IBoard.hpp; sourceTree = "<group>"; };
+		1DB210D61D04F2810092E721 /* IBoardLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IBoardLayout.cpp; path = ../board/IBoardLayout.cpp; sourceTree = "<group>"; };
+		1DB210D71D04F2810092E721 /* IBoardLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IBoardLayout.hpp; path = ../board/IBoardLayout.hpp; sourceTree = "<group>"; };
+		1DB210D81D04F2810092E721 /* RouteSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RouteSet.cpp; path = ../board/RouteSet.cpp; sourceTree = "<group>"; };
+		1DB210D91D04F2810092E721 /* RouteSet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RouteSet.hpp; path = ../board/RouteSet.hpp; sourceTree = "<group>"; };
+		1DB210DF1D04F29E0092E721 /* Messaging.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Messaging.cpp; path = ../../../kettle/utils/Messaging.cpp; sourceTree = "<group>"; };
+		1DB210E01D04F29E0092E721 /* Messaging.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Messaging.hpp; path = ../../../kettle/utils/Messaging.hpp; sourceTree = "<group>"; };
+		1DB210E11D04F29E0092E721 /* ReferenceCountedObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ReferenceCountedObject.cpp; path = ../../../kettle/utils/ReferenceCountedObject.cpp; sourceTree = "<group>"; };
+		1DB210E21D04F29E0092E721 /* ReferenceCountedObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ReferenceCountedObject.hpp; path = ../../../kettle/utils/ReferenceCountedObject.hpp; sourceTree = "<group>"; };
+		1DB210E31D04F29E0092E721 /* StringHash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StringHash.cpp; path = ../../../kettle/utils/StringHash.cpp; sourceTree = "<group>"; };
+		1DB210E41D04F29E0092E721 /* StringHash.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = StringHash.hpp; path = ../../../kettle/utils/StringHash.hpp; sourceTree = "<group>"; };
+		1DB210E51D04F29E0092E721 /* UserInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserInfo.cpp; path = ../../../kettle/utils/UserInfo.cpp; sourceTree = "<group>"; };
+		1DB210E61D04F29E0092E721 /* UserInfo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = UserInfo.hpp; path = ../../../kettle/utils/UserInfo.hpp; sourceTree = "<group>"; };
+		1DB210EC1D04F2D40092E721 /* IPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IPlayer.cpp; path = ../players/IPlayer.cpp; sourceTree = "<group>"; };
+		1DB210ED1D04F2D40092E721 /* IPlayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IPlayer.hpp; path = ../players/IPlayer.hpp; sourceTree = "<group>"; };
+		1DB210EF1D04F3120092E721 /* IMatchCondition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IMatchCondition.cpp; path = ../rules/IMatchCondition.cpp; sourceTree = "<group>"; };
+		1DB210F01D04F3120092E721 /* IMatchCondition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IMatchCondition.hpp; path = ../rules/IMatchCondition.hpp; sourceTree = "<group>"; };
+		1DB210F11D04F3120092E721 /* IPhaseRules.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IPhaseRules.cpp; path = ../rules/IPhaseRules.cpp; sourceTree = "<group>"; };
+		1DB210F21D04F3120092E721 /* IPhaseRules.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IPhaseRules.hpp; path = ../rules/IPhaseRules.hpp; sourceTree = "<group>"; };
+		1DB210F31D04F3120092E721 /* MatchConditionAnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatchConditionAnd.cpp; path = ../rules/MatchConditionAnd.cpp; sourceTree = "<group>"; };
+		1DB210F41D04F3120092E721 /* MatchConditionAnd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MatchConditionAnd.hpp; path = ../rules/MatchConditionAnd.hpp; sourceTree = "<group>"; };
+		1DB210F51D04F3120092E721 /* MatchConditionBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatchConditionBuilder.cpp; path = ../rules/MatchConditionBuilder.cpp; sourceTree = "<group>"; };
+		1DB210F61D04F3120092E721 /* MatchConditionBuilder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MatchConditionBuilder.hpp; path = ../rules/MatchConditionBuilder.hpp; sourceTree = "<group>"; };
+		1DB210F71D04F3120092E721 /* MatchConditionBuilder.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MatchConditionBuilder.inl; path = ../rules/MatchConditionBuilder.inl; sourceTree = "<group>"; };
+		1DB210F81D04F3120092E721 /* MatchConditionFunctionPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatchConditionFunctionPointer.cpp; path = ../rules/MatchConditionFunctionPointer.cpp; sourceTree = "<group>"; };
+		1DB210F91D04F3120092E721 /* MatchConditionFunctionPointer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MatchConditionFunctionPointer.hpp; path = ../rules/MatchConditionFunctionPointer.hpp; sourceTree = "<group>"; };
+		1DB210FA1D04F3120092E721 /* MatchConditionNot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatchConditionNot.cpp; path = ../rules/MatchConditionNot.cpp; sourceTree = "<group>"; };
+		1DB210FB1D04F3120092E721 /* MatchConditionNot.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MatchConditionNot.hpp; path = ../rules/MatchConditionNot.hpp; sourceTree = "<group>"; };
+		1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatchConditionOr.cpp; path = ../rules/MatchConditionOr.cpp; sourceTree = "<group>"; };
+		1DB210FD1D04F3120092E721 /* MatchConditionOr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MatchConditionOr.hpp; path = ../rules/MatchConditionOr.hpp; sourceTree = "<group>"; };
+		1DB210FE1D04F3120092E721 /* MatchContext.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MatchContext.inl; path = ../rules/MatchContext.inl; sourceTree = "<group>"; };
+		1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhaseRulesByFunctionPointers.cpp; path = ../rules/PhaseRulesByFunctionPointers.cpp; sourceTree = "<group>"; };
+		1DB211001D04F3120092E721 /* PhaseRulesByFunctionPointers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PhaseRulesByFunctionPointers.hpp; path = ../rules/PhaseRulesByFunctionPointers.hpp; sourceTree = "<group>"; };
+		1DB211011D04F3120092E721 /* RuleTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RuleTypes.h; path = ../rules/RuleTypes.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1DB210971D04F0D60092E721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1DB210911D04F0D60092E721 = {
+			isa = PBXGroup;
+			children = (
+				1DB210A41D04F1350092E721 /* code */,
+				1DB2109C1D04F0D60092E721 /* tests */,
+				1DB2109B1D04F0D60092E721 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1DB2109B1D04F0D60092E721 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1DB2109A1D04F0D60092E721 /* tests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1DB2109C1D04F0D60092E721 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210A71D04F1880092E721 /* TestMatch.cpp */,
+				1DB210A81D04F1880092E721 /* TestMatch.hpp */,
+				1DB2109D1D04F0D60092E721 /* main.cpp */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		1DB210A41D04F1350092E721 /* code */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210A61D04F15B0092E721 /* kettle */,
+				1DB210A51D04F14C0092E721 /* game */,
+			);
+			name = code;
+			sourceTree = "<group>";
+		};
+		1DB210A51D04F14C0092E721 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210AA1D04F1AD0092E721 /* rules */,
+				1DB210EB1D04F2AC0092E721 /* players */,
+				1DB210D01D04F26B0092E721 /* board */,
+				1DB210C91D04F24B0092E721 /* pieces */,
+			);
+			name = game;
+			sourceTree = "<group>";
+		};
+		1DB210A61D04F15B0092E721 /* kettle */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210DE1D04F28C0092E721 /* utils */,
+				1DB210B11D04F2270092E721 /* math */,
+			);
+			name = kettle;
+			sourceTree = "<group>";
+		};
+		1DB210AA1D04F1AD0092E721 /* rules */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210EF1D04F3120092E721 /* IMatchCondition.cpp */,
+				1DB210F01D04F3120092E721 /* IMatchCondition.hpp */,
+				1DB210F11D04F3120092E721 /* IPhaseRules.cpp */,
+				1DB210F21D04F3120092E721 /* IPhaseRules.hpp */,
+				1DB210F31D04F3120092E721 /* MatchConditionAnd.cpp */,
+				1DB210F41D04F3120092E721 /* MatchConditionAnd.hpp */,
+				1DB210F51D04F3120092E721 /* MatchConditionBuilder.cpp */,
+				1DB210F61D04F3120092E721 /* MatchConditionBuilder.hpp */,
+				1DB210F71D04F3120092E721 /* MatchConditionBuilder.inl */,
+				1DB210F81D04F3120092E721 /* MatchConditionFunctionPointer.cpp */,
+				1DB210F91D04F3120092E721 /* MatchConditionFunctionPointer.hpp */,
+				1DB210FA1D04F3120092E721 /* MatchConditionNot.cpp */,
+				1DB210FB1D04F3120092E721 /* MatchConditionNot.hpp */,
+				1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */,
+				1DB210FD1D04F3120092E721 /* MatchConditionOr.hpp */,
+				1DB210FE1D04F3120092E721 /* MatchContext.inl */,
+				1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */,
+				1DB211001D04F3120092E721 /* PhaseRulesByFunctionPointers.hpp */,
+				1DB211011D04F3120092E721 /* RuleTypes.h */,
+				1DB210AB1D04F1DC0092E721 /* Match.cpp */,
+				1DB210AC1D04F1DC0092E721 /* Match.hpp */,
+				1DB210AD1D04F1DC0092E721 /* MatchContext.cpp */,
+				1DB210AE1D04F1DC0092E721 /* MatchContext.hpp */,
+			);
+			name = rules;
+			sourceTree = "<group>";
+		};
+		1DB210B11D04F2270092E721 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210B21D04F23F0092E721 /* Operations.cpp */,
+				1DB210B31D04F23F0092E721 /* Operations.hpp */,
+				1DB210B41D04F23F0092E721 /* Vector2d.cpp */,
+				1DB210B51D04F23F0092E721 /* Vector2d.hpp */,
+				1DB210B61D04F23F0092E721 /* Vector2dTemplate.cpp */,
+				1DB210B71D04F23F0092E721 /* Vector2dTemplate.hpp */,
+				1DB210B81D04F23F0092E721 /* Vector2dTemplate.inl */,
+				1DB210B91D04F23F0092E721 /* Vector3d.cpp */,
+				1DB210BA1D04F23F0092E721 /* Vector3d.hpp */,
+				1DB210BB1D04F23F0092E721 /* Vector3dTemplate.cpp */,
+				1DB210BC1D04F23F0092E721 /* Vector3dTemplate.hpp */,
+				1DB210BD1D04F23F0092E721 /* Vector3dTemplate.inl */,
+				1DB210BE1D04F23F0092E721 /* VectorInt2d.cpp */,
+				1DB210BF1D04F23F0092E721 /* VectorInt2d.hpp */,
+				1DB210C01D04F23F0092E721 /* VectorInt3d.cpp */,
+				1DB210C11D04F23F0092E721 /* VectorInt3d.hpp */,
+			);
+			name = math;
+			sourceTree = "<group>";
+		};
+		1DB210C91D04F24B0092E721 /* pieces */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210CA1D04F25F0092E721 /* CollisionLayer.cpp */,
+				1DB210CB1D04F25F0092E721 /* CollisionLayer.hpp */,
+				1DB210CC1D04F25F0092E721 /* IPiece.cpp */,
+				1DB210CD1D04F25F0092E721 /* IPiece.hpp */,
+			);
+			name = pieces;
+			sourceTree = "<group>";
+		};
+		1DB210D01D04F26B0092E721 /* board */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210D11D04F2810092E721 /* Board.cpp */,
+				1DB210D21D04F2810092E721 /* Board.hpp */,
+				1DB210D31D04F2810092E721 /* BoardTypes.h */,
+				1DB210D41D04F2810092E721 /* IBoard.cpp */,
+				1DB210D51D04F2810092E721 /* IBoard.hpp */,
+				1DB210D61D04F2810092E721 /* IBoardLayout.cpp */,
+				1DB210D71D04F2810092E721 /* IBoardLayout.hpp */,
+				1DB210D81D04F2810092E721 /* RouteSet.cpp */,
+				1DB210D91D04F2810092E721 /* RouteSet.hpp */,
+			);
+			name = board;
+			sourceTree = "<group>";
+		};
+		1DB210DE1D04F28C0092E721 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210DF1D04F29E0092E721 /* Messaging.cpp */,
+				1DB210E01D04F29E0092E721 /* Messaging.hpp */,
+				1DB210E11D04F29E0092E721 /* ReferenceCountedObject.cpp */,
+				1DB210E21D04F29E0092E721 /* ReferenceCountedObject.hpp */,
+				1DB210E31D04F29E0092E721 /* StringHash.cpp */,
+				1DB210E41D04F29E0092E721 /* StringHash.hpp */,
+				1DB210E51D04F29E0092E721 /* UserInfo.cpp */,
+				1DB210E61D04F29E0092E721 /* UserInfo.hpp */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		1DB210EB1D04F2AC0092E721 /* players */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210EC1D04F2D40092E721 /* IPlayer.cpp */,
+				1DB210ED1D04F2D40092E721 /* IPlayer.hpp */,
+			);
+			name = players;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1DB210991D04F0D60092E721 /* tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DB210A11D04F0D60092E721 /* Build configuration list for PBXNativeTarget "tests" */;
+			buildPhases = (
+				1DB210961D04F0D60092E721 /* Sources */,
+				1DB210971D04F0D60092E721 /* Frameworks */,
+				1DB210981D04F0D60092E721 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tests;
+			productName = tests;
+			productReference = 1DB2109A1D04F0D60092E721 /* tests */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1DB210921D04F0D60092E721 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Derek Higgs";
+				TargetAttributes = {
+					1DB210991D04F0D60092E721 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 1DB210951D04F0D60092E721 /* Build configuration list for PBXProject "tests" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1DB210911D04F0D60092E721;
+			productRefGroup = 1DB2109B1D04F0D60092E721 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1DB210991D04F0D60092E721 /* tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1DB210961D04F0D60092E721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DB210E71D04F29E0092E721 /* Messaging.cpp in Sources */,
+				1DB211021D04F3120092E721 /* IMatchCondition.cpp in Sources */,
+				1DB210DC1D04F2810092E721 /* IBoardLayout.cpp in Sources */,
+				1DB211061D04F3120092E721 /* MatchConditionFunctionPointer.cpp in Sources */,
+				1DB210DA1D04F2810092E721 /* Board.cpp in Sources */,
+				1DB210CE1D04F25F0092E721 /* CollisionLayer.cpp in Sources */,
+				1DB210C71D04F23F0092E721 /* VectorInt2d.cpp in Sources */,
+				1DB210DB1D04F2810092E721 /* IBoard.cpp in Sources */,
+				1DB210EE1D04F2D40092E721 /* IPlayer.cpp in Sources */,
+				1DB2109E1D04F0D60092E721 /* main.cpp in Sources */,
+				1DB210AF1D04F1DC0092E721 /* Match.cpp in Sources */,
+				1DB210C41D04F23F0092E721 /* Vector2dTemplate.cpp in Sources */,
+				1DB210E81D04F29E0092E721 /* ReferenceCountedObject.cpp in Sources */,
+				1DB211081D04F3120092E721 /* MatchConditionOr.cpp in Sources */,
+				1DB210E91D04F29E0092E721 /* StringHash.cpp in Sources */,
+				1DB211031D04F3120092E721 /* IPhaseRules.cpp in Sources */,
+				1DB210EA1D04F29E0092E721 /* UserInfo.cpp in Sources */,
+				1DB211051D04F3120092E721 /* MatchConditionBuilder.cpp in Sources */,
+				1DB210C31D04F23F0092E721 /* Vector2d.cpp in Sources */,
+				1DB210C61D04F23F0092E721 /* Vector3dTemplate.cpp in Sources */,
+				1DB210DD1D04F2810092E721 /* RouteSet.cpp in Sources */,
+				1DB210A91D04F1880092E721 /* TestMatch.cpp in Sources */,
+				1DB211091D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp in Sources */,
+				1DB210B01D04F1DC0092E721 /* MatchContext.cpp in Sources */,
+				1DB210C81D04F23F0092E721 /* VectorInt3d.cpp in Sources */,
+				1DB211041D04F3120092E721 /* MatchConditionAnd.cpp in Sources */,
+				1DB210CF1D04F25F0092E721 /* IPiece.cpp in Sources */,
+				1DB210C21D04F23F0092E721 /* Operations.cpp in Sources */,
+				1DB210C51D04F23F0092E721 /* Vector3d.cpp in Sources */,
+				1DB211071D04F3120092E721 /* MatchConditionNot.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DB2109F1D04F0D60092E721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1DB210A01D04F0D60092E721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1DB210A21D04F0D60092E721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1DB210A31D04F0D60092E721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DB210951D04F0D60092E721 /* Build configuration list for PBXProject "tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DB2109F1D04F0D60092E721 /* Debug */,
+				1DB210A01D04F0D60092E721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DB210A11D04F0D60092E721 /* Build configuration list for PBXNativeTarget "tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DB210A21D04F0D60092E721 /* Debug */,
+				1DB210A31D04F0D60092E721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1DB210921D04F0D60092E721 /* Project object */;
+}
