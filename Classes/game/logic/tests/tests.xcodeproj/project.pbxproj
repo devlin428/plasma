@@ -36,8 +36,11 @@
 		1DB211061D04F3120092E721 /* MatchConditionFunctionPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210F81D04F3120092E721 /* MatchConditionFunctionPointer.cpp */; };
 		1DB211071D04F3120092E721 /* MatchConditionNot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FA1D04F3120092E721 /* MatchConditionNot.cpp */; };
 		1DB211081D04F3120092E721 /* MatchConditionOr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */; };
-		1DB211091D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */; };
 		1DB211101D04F90F0092E721 /* TestMatchCondition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2110E1D04F90F0092E721 /* TestMatchCondition.cpp */; };
+		1DB211131D0515060092E721 /* PhaseRulesByInterfaces.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211111D0515060092E721 /* PhaseRulesByInterfaces.cpp */; };
+		1DB211161D0516FF0092E721 /* EndCondition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211141D0516FF0092E721 /* EndCondition.cpp */; };
+		1DB211191D0523FA0092E721 /* IPhaseRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211171D0523FA0092E721 /* IPhaseRule.cpp */; };
+		1DB2111C1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2111A1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -116,11 +119,17 @@
 		1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MatchConditionOr.cpp; path = ../rules/MatchConditionOr.cpp; sourceTree = "<group>"; };
 		1DB210FD1D04F3120092E721 /* MatchConditionOr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MatchConditionOr.hpp; path = ../rules/MatchConditionOr.hpp; sourceTree = "<group>"; };
 		1DB210FE1D04F3120092E721 /* MatchContext.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MatchContext.inl; path = ../rules/MatchContext.inl; sourceTree = "<group>"; };
-		1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhaseRulesByFunctionPointers.cpp; path = ../rules/PhaseRulesByFunctionPointers.cpp; sourceTree = "<group>"; };
-		1DB211001D04F3120092E721 /* PhaseRulesByFunctionPointers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PhaseRulesByFunctionPointers.hpp; path = ../rules/PhaseRulesByFunctionPointers.hpp; sourceTree = "<group>"; };
 		1DB211011D04F3120092E721 /* RuleTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RuleTypes.h; path = ../rules/RuleTypes.h; sourceTree = "<group>"; };
 		1DB2110E1D04F90F0092E721 /* TestMatchCondition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMatchCondition.cpp; sourceTree = "<group>"; };
 		1DB2110F1D04F90F0092E721 /* TestMatchCondition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestMatchCondition.hpp; sourceTree = "<group>"; };
+		1DB211111D0515060092E721 /* PhaseRulesByInterfaces.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhaseRulesByInterfaces.cpp; path = ../rules/PhaseRulesByInterfaces.cpp; sourceTree = "<group>"; };
+		1DB211121D0515060092E721 /* PhaseRulesByInterfaces.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PhaseRulesByInterfaces.hpp; path = ../rules/PhaseRulesByInterfaces.hpp; sourceTree = "<group>"; };
+		1DB211141D0516FF0092E721 /* EndCondition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EndCondition.cpp; path = ../rules/EndCondition.cpp; sourceTree = "<group>"; };
+		1DB211151D0516FF0092E721 /* EndCondition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = EndCondition.hpp; path = ../rules/EndCondition.hpp; sourceTree = "<group>"; };
+		1DB211171D0523FA0092E721 /* IPhaseRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IPhaseRule.cpp; path = ../rules/IPhaseRule.cpp; sourceTree = "<group>"; };
+		1DB211181D0523FA0092E721 /* IPhaseRule.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IPhaseRule.hpp; path = ../rules/IPhaseRule.hpp; sourceTree = "<group>"; };
+		1DB2111A1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPhaseRulesByInterfaces.cpp; sourceTree = "<group>"; };
+		1DB2111B1D0528890092E721 /* TestPhaseRulesByInterfaces.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhaseRulesByInterfaces.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +168,8 @@
 				1DB210A81D04F1880092E721 /* TestMatch.hpp */,
 				1DB2110E1D04F90F0092E721 /* TestMatchCondition.cpp */,
 				1DB2110F1D04F90F0092E721 /* TestMatchCondition.hpp */,
+				1DB2111A1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp */,
+				1DB2111B1D0528890092E721 /* TestPhaseRulesByInterfaces.hpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -204,8 +215,10 @@
 				1DB210FE1D04F3120092E721 /* MatchContext.inl */,
 				1DB210F11D04F3120092E721 /* IPhaseRules.cpp */,
 				1DB210F21D04F3120092E721 /* IPhaseRules.hpp */,
-				1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */,
-				1DB211001D04F3120092E721 /* PhaseRulesByFunctionPointers.hpp */,
+				1DB211111D0515060092E721 /* PhaseRulesByInterfaces.cpp */,
+				1DB211121D0515060092E721 /* PhaseRulesByInterfaces.hpp */,
+				1DB211171D0523FA0092E721 /* IPhaseRule.cpp */,
+				1DB211181D0523FA0092E721 /* IPhaseRule.hpp */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -300,6 +313,8 @@
 				1DB210FB1D04F3120092E721 /* MatchConditionNot.hpp */,
 				1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */,
 				1DB210FD1D04F3120092E721 /* MatchConditionOr.hpp */,
+				1DB211141D0516FF0092E721 /* EndCondition.cpp */,
+				1DB211151D0516FF0092E721 /* EndCondition.hpp */,
 			);
 			name = MatchCondition;
 			sourceTree = "<group>";
@@ -366,9 +381,11 @@
 				1DB211061D04F3120092E721 /* MatchConditionFunctionPointer.cpp in Sources */,
 				1DB210DA1D04F2810092E721 /* Board.cpp in Sources */,
 				1DB210CE1D04F25F0092E721 /* CollisionLayer.cpp in Sources */,
+				1DB211131D0515060092E721 /* PhaseRulesByInterfaces.cpp in Sources */,
 				1DB210C71D04F23F0092E721 /* VectorInt2d.cpp in Sources */,
 				1DB210DB1D04F2810092E721 /* IBoard.cpp in Sources */,
 				1DB210EE1D04F2D40092E721 /* IPlayer.cpp in Sources */,
+				1DB211191D0523FA0092E721 /* IPhaseRule.cpp in Sources */,
 				1DB2109E1D04F0D60092E721 /* main.cpp in Sources */,
 				1DB210AF1D04F1DC0092E721 /* Match.cpp in Sources */,
 				1DB210C41D04F23F0092E721 /* Vector2dTemplate.cpp in Sources */,
@@ -382,8 +399,8 @@
 				1DB210C31D04F23F0092E721 /* Vector2d.cpp in Sources */,
 				1DB210C61D04F23F0092E721 /* Vector3dTemplate.cpp in Sources */,
 				1DB210DD1D04F2810092E721 /* RouteSet.cpp in Sources */,
+				1DB2111C1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp in Sources */,
 				1DB210A91D04F1880092E721 /* TestMatch.cpp in Sources */,
-				1DB211091D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp in Sources */,
 				1DB210B01D04F1DC0092E721 /* MatchContext.cpp in Sources */,
 				1DB210C81D04F23F0092E721 /* VectorInt3d.cpp in Sources */,
 				1DB211041D04F3120092E721 /* MatchConditionAnd.cpp in Sources */,
@@ -391,6 +408,7 @@
 				1DB210C21D04F23F0092E721 /* Operations.cpp in Sources */,
 				1DB210C51D04F23F0092E721 /* Vector3d.cpp in Sources */,
 				1DB211071D04F3120092E721 /* MatchConditionNot.cpp in Sources */,
+				1DB211161D0516FF0092E721 /* EndCondition.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

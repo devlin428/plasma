@@ -19,18 +19,6 @@
 #include "IBoard.hpp"
 
 namespace {
-    void deletePlayer(game::IPlayer * player) {
-        if(player) {
-            delete player;
-        }
-    }
-    
-    void deletePiece(game::IPiece * piece) {
-        if(piece) {
-            delete piece;
-        }
-    }
-    
     void nextPhase(const game::IPhaseRules * phase_rules, game::phase_t & io_phase) {
         io_phase = phase_rules->getNextPhase(io_phase);
     }
@@ -83,12 +71,12 @@ namespace game {
             
             std::for_each(m_context.players,
                           m_context.players+getNumberOfPlayers(),
-                          deletePlayer);
+                          [](IPlayer * player){ delete player; });
             delete [] m_context.players;
             
             std::for_each(m_all_pieces,
                           m_all_pieces+getMaxPieces(),
-                          deletePiece);
+                          [](IPiece * piece){ delete piece; });
             delete [] m_all_pieces;
             
             delete [] m_context.pieces_by_player;

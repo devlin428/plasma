@@ -12,31 +12,6 @@
 #include "RuleTypes.h"
 
 namespace game {
-    /**
-     * Reasons for an update function to break.
-     */
-    enum PhaseUpdateBreakReason {
-        /**
-         * The current phase ended and a quicksave can be performed.
-         */
-        kPhaseUpdateBreakReasonPhaseEndQuicksavePoint,
-        
-        /**
-         * The match just reached a point where a quicksave can be performed.
-         */
-        kPhaseUpdateBreakReasonQuicksavePoint,
-        
-        /**
-         * The current phase ended.
-         */
-        kPhaseUpdateBreakReasonPhaseEnd,
-        
-        /**
-         * Waiting on player input.
-         */
-        kPhaseUpdateBreakReasonWaitingOnPlayer
-    }; // enum PhaseUpdateBreakReason
-    
     // Special phase codes.
     
     /**
