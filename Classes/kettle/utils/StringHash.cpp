@@ -10,12 +10,14 @@
 
 #include <cstring>
 
+#ifdef DEBUG_RETAIN_STRING
 namespace {
     const char * copy(const char * cstring) {
         size_t length = strlen(cstring);
         return strcpy(new char[ length + 1 ], cstring);
     }
 } // namespace
+#endif // DEBUG_RETAIN_STRING
 
 namespace kettle {
     namespace utils {
@@ -52,7 +54,7 @@ namespace kettle {
                 delete [] m_cstring;
                 m_cstring = nullptr;
             }
-#endif
+#endif // DEBUG_RETAIN_STRING
         }
 } // namespace utils
 } // namespace kettle

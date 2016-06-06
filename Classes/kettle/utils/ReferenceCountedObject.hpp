@@ -40,6 +40,8 @@ namespace utils {
         
     protected:
         unsigned int m_reference_count;
+        
+        virtual ~ReferenceCountedObject() {}
     };
 } // namespace utils
 } // namespace kettle

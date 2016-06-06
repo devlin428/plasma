@@ -37,6 +37,7 @@
 		1DB211071D04F3120092E721 /* MatchConditionNot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FA1D04F3120092E721 /* MatchConditionNot.cpp */; };
 		1DB211081D04F3120092E721 /* MatchConditionOr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */; };
 		1DB211091D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */; };
+		1DB211101D04F90F0092E721 /* TestMatchCondition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2110E1D04F90F0092E721 /* TestMatchCondition.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,6 +119,8 @@
 		1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhaseRulesByFunctionPointers.cpp; path = ../rules/PhaseRulesByFunctionPointers.cpp; sourceTree = "<group>"; };
 		1DB211001D04F3120092E721 /* PhaseRulesByFunctionPointers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PhaseRulesByFunctionPointers.hpp; path = ../rules/PhaseRulesByFunctionPointers.hpp; sourceTree = "<group>"; };
 		1DB211011D04F3120092E721 /* RuleTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RuleTypes.h; path = ../rules/RuleTypes.h; sourceTree = "<group>"; };
+		1DB2110E1D04F90F0092E721 /* TestMatchCondition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMatchCondition.cpp; sourceTree = "<group>"; };
+		1DB2110F1D04F90F0092E721 /* TestMatchCondition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestMatchCondition.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +154,11 @@
 		1DB2109C1D04F0D60092E721 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				1DB2109D1D04F0D60092E721 /* main.cpp */,
 				1DB210A71D04F1880092E721 /* TestMatch.cpp */,
 				1DB210A81D04F1880092E721 /* TestMatch.hpp */,
-				1DB2109D1D04F0D60092E721 /* main.cpp */,
+				1DB2110E1D04F90F0092E721 /* TestMatchCondition.cpp */,
+				1DB2110F1D04F90F0092E721 /* TestMatchCondition.hpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -190,29 +195,17 @@
 		1DB210AA1D04F1AD0092E721 /* rules */ = {
 			isa = PBXGroup;
 			children = (
-				1DB210EF1D04F3120092E721 /* IMatchCondition.cpp */,
-				1DB210F01D04F3120092E721 /* IMatchCondition.hpp */,
-				1DB210F11D04F3120092E721 /* IPhaseRules.cpp */,
-				1DB210F21D04F3120092E721 /* IPhaseRules.hpp */,
-				1DB210F31D04F3120092E721 /* MatchConditionAnd.cpp */,
-				1DB210F41D04F3120092E721 /* MatchConditionAnd.hpp */,
-				1DB210F51D04F3120092E721 /* MatchConditionBuilder.cpp */,
-				1DB210F61D04F3120092E721 /* MatchConditionBuilder.hpp */,
-				1DB210F71D04F3120092E721 /* MatchConditionBuilder.inl */,
-				1DB210F81D04F3120092E721 /* MatchConditionFunctionPointer.cpp */,
-				1DB210F91D04F3120092E721 /* MatchConditionFunctionPointer.hpp */,
-				1DB210FA1D04F3120092E721 /* MatchConditionNot.cpp */,
-				1DB210FB1D04F3120092E721 /* MatchConditionNot.hpp */,
-				1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */,
-				1DB210FD1D04F3120092E721 /* MatchConditionOr.hpp */,
-				1DB210FE1D04F3120092E721 /* MatchContext.inl */,
-				1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */,
-				1DB211001D04F3120092E721 /* PhaseRulesByFunctionPointers.hpp */,
+				1DB2110D1D04F7B30092E721 /* MatchCondition */,
 				1DB211011D04F3120092E721 /* RuleTypes.h */,
 				1DB210AB1D04F1DC0092E721 /* Match.cpp */,
 				1DB210AC1D04F1DC0092E721 /* Match.hpp */,
 				1DB210AD1D04F1DC0092E721 /* MatchContext.cpp */,
 				1DB210AE1D04F1DC0092E721 /* MatchContext.hpp */,
+				1DB210FE1D04F3120092E721 /* MatchContext.inl */,
+				1DB210F11D04F3120092E721 /* IPhaseRules.cpp */,
+				1DB210F21D04F3120092E721 /* IPhaseRules.hpp */,
+				1DB210FF1D04F3120092E721 /* PhaseRulesByFunctionPointers.cpp */,
+				1DB211001D04F3120092E721 /* PhaseRulesByFunctionPointers.hpp */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -291,6 +284,26 @@
 			name = players;
 			sourceTree = "<group>";
 		};
+		1DB2110D1D04F7B30092E721 /* MatchCondition */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210EF1D04F3120092E721 /* IMatchCondition.cpp */,
+				1DB210F01D04F3120092E721 /* IMatchCondition.hpp */,
+				1DB210F31D04F3120092E721 /* MatchConditionAnd.cpp */,
+				1DB210F41D04F3120092E721 /* MatchConditionAnd.hpp */,
+				1DB210F51D04F3120092E721 /* MatchConditionBuilder.cpp */,
+				1DB210F61D04F3120092E721 /* MatchConditionBuilder.hpp */,
+				1DB210F71D04F3120092E721 /* MatchConditionBuilder.inl */,
+				1DB210F81D04F3120092E721 /* MatchConditionFunctionPointer.cpp */,
+				1DB210F91D04F3120092E721 /* MatchConditionFunctionPointer.hpp */,
+				1DB210FA1D04F3120092E721 /* MatchConditionNot.cpp */,
+				1DB210FB1D04F3120092E721 /* MatchConditionNot.hpp */,
+				1DB210FC1D04F3120092E721 /* MatchConditionOr.cpp */,
+				1DB210FD1D04F3120092E721 /* MatchConditionOr.hpp */,
+			);
+			name = MatchCondition;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -360,6 +373,7 @@
 				1DB210AF1D04F1DC0092E721 /* Match.cpp in Sources */,
 				1DB210C41D04F23F0092E721 /* Vector2dTemplate.cpp in Sources */,
 				1DB210E81D04F29E0092E721 /* ReferenceCountedObject.cpp in Sources */,
+				1DB211101D04F90F0092E721 /* TestMatchCondition.cpp in Sources */,
 				1DB211081D04F3120092E721 /* MatchConditionOr.cpp in Sources */,
 				1DB210E91D04F29E0092E721 /* StringHash.cpp in Sources */,
 				1DB211031D04F3120092E721 /* IPhaseRules.cpp in Sources */,

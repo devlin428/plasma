@@ -50,6 +50,33 @@ namespace game {
         MatchConditionBuilder & andCondition(const MatchConditionBuilder & right_hand_side);
         
         /**
+         * Ands the current condition with the condition from another builder.
+         *
+         * @param right_hand_side   The condition builder with the condition on the
+         *                          right.
+         * @return                  This builder on the left after the operation.
+         */
+        MatchConditionBuilder & operator&&(const MatchConditionBuilder & right_hand_side);
+        
+        /**
+         * Ands this condition with a simple condition.
+         *
+         * @param right_hand_side   The condition builder with the other
+         *                          condition.
+         * @return                  This builder after the operation.
+         */
+        MatchConditionBuilder & andCondition(match_condition_t right_hand_side);
+        
+        /**
+         * Ands this condition with a simple condition.
+         *
+         * @param right_hand_side   The condition builder with the other
+         *                          condition.
+         * @return                  This builder after the operation.
+         */
+        MatchConditionBuilder & operator&&(match_condition_t right_hand_side);
+        
+        /**
          * Ors this condition with the condition from another condition builder.
          *
          * @param right_hand_side   The condition builder with the other
@@ -59,11 +86,43 @@ namespace game {
         MatchConditionBuilder & orCondition(const MatchConditionBuilder & right_hand_side);
         
         /**
+         * Ors this condition with the condition from another condition builder.
+         *
+         * @param right_hand_side   The condition builder with the other
+         *                          condition.
+         * @return                  This builder after the operation.
+         */
+        MatchConditionBuilder & operator||(const MatchConditionBuilder & right_hand_side);
+        
+        /**
+         * Ors this condition with a simple condition.
+         *
+         * @param right_hand_side   The simple condition.
+         * @return                  This builder after the operation.
+         */
+        MatchConditionBuilder & orCondition(match_condition_t right_hand_side);
+        
+        /**
+         * Ors this condition with a simple condition.
+         *
+         * @param right_hand_side   The simple condition.
+         * @return                  This builder after the operation.
+         */
+        MatchConditionBuilder & operator||(match_condition_t right_hand_side);
+        
+        /**
          * Negates this condition.
          *
          * @return                  This builder after the operation.
          */
         MatchConditionBuilder & notCondition();
+        
+        /**
+         * Negates this condition.
+         *
+         * @return                  This builder after the operation.
+         */
+        MatchConditionBuilder & operator!();
         
     private:
         /**
@@ -83,44 +142,12 @@ namespace game {
     /**
      * Ands the conditions from a condition builder and a simple condition.
      *
-     * @param left_hand_side    The condition builder with the condition.
-     * @param right_hand_side   The simple condition.
-     * @return                  This builder after the operation.
-     */
-    MatchConditionBuilder & operator&&(MatchConditionBuilder & left_hand_side,
-                                       match_condition_t right_hand_side);
-    
-    /**
-     * Ands the conditions from a condition builder and a simple condition.
-     *
      * @param left_hand_side    The simple condition.
      * @param right_hand_side   The condition builder with the condition.
      * @return                  This builder after the operation.
      */
     MatchConditionBuilder & operator&&(match_condition_t left_hand_side,
                                        MatchConditionBuilder & right_hand_side);
-    
-    /**
-     * Ands the conditions from two condition builders.
-     *
-     * @param left_hand_side    The condition builder with the condition on the
-     *                          left.
-     * @param right_hand_side   The condition builder with the condition on the
-     *                          right.
-     * @return                  This builder on the left after the operation.
-     */
-    MatchConditionBuilder & operator&&(MatchConditionBuilder & left_hand_side,
-                                       const MatchConditionBuilder & right_hand_side);
-    
-    /**
-     * Ors the conditions from a condition builder and a simple condition.
-     *
-     * @param left_hand_side    The condition builder with the condition.
-     * @param right_hand_side   The simple condition.
-     * @return                  This builder after the operation.
-     */
-    MatchConditionBuilder & operator||(MatchConditionBuilder & left_hand_side,
-                                       match_condition_t right_hand_side);
     
     /**
      * Ors the conditions from a condition builder and a simple condition.
@@ -131,26 +158,6 @@ namespace game {
      */
     MatchConditionBuilder & operator||(match_condition_t left_hand_side,
                                        MatchConditionBuilder & right_hand_side);
-    
-    /**
-     * Ors the conditions from two condition builders.
-     *
-     * @param left_hand_side    The condition builder with the condition on the
-     *                          left.
-     * @param right_hand_side   The condition builder with the condition on the
-     *                          right.
-     * @return                  This builder on the left after the operation.
-     */
-    MatchConditionBuilder & operator||(MatchConditionBuilder & left_hand_side,
-                                       const MatchConditionBuilder & right_hand_side);
-    
-    /**
-     * Negates the condition of the buidler.
-     *
-     * @param condtion_builder  The buider.
-     * @return                  The builder after the operation.
-     */
-    MatchConditionBuilder & operator!(MatchConditionBuilder & condtion_builder);
 } // namespace game
 
 #include "MatchConditionBuilder.inl"

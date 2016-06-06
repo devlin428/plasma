@@ -7,7 +7,10 @@
 //
 
 #include "TestMatch.hpp"
+#include "TestMatchCondition.hpp"
 
 int main(int argc, const char * argv[]) {
-    return testMatch();
+    testMatch();
+    testMatchCondition();
+    return 0;
 }
