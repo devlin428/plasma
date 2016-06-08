@@ -13,5 +13,18 @@
  * Tests the setup phase.
  */
 int testSetupPhase();
+/**
+ * OUTPUT:
+ 
+ Created piece of type 1
+ Piece 0x1002002d0 set at 3.
+ Waiting on player 1
+ Quicksave point
+ Created piece of type 2
+ Piece 0x1002002b0 set at 1.
+ Waiting on player 0
+ Phase ended with a quicksave point.
+ 
+ */
 
 #endif /* TestPhaseSetup_hpp */

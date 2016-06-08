@@ -19,7 +19,7 @@ namespace game {
         virtual ~IPiece() {}
         
         virtual positionid_t getPositionId() const = 0;
-        virtual void setPositionId(int position_id) = 0;
+        virtual void setPositionId(positionid_t position_id) = 0;
         
         virtual flags32_t getBlockFlags() const = 0;
         virtual flags32_t getPassFlags() const = 0;

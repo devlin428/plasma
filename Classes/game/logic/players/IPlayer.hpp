@@ -31,7 +31,7 @@ namespace game {
                                             const kettle::utils::UserInfo * phase_info,
                                             kettle::utils::UserInfo * o_action_info) = 0;
         
-        virtual IPiece * spawn(unsigned int type);
+        virtual IPiece * spawn(unsigned int type) = 0;
         
     protected:
         IPlayer() {}

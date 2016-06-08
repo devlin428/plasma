@@ -41,17 +41,8 @@ namespace game {
      * Creates a new setup phase. This variation allows for fixed size arrays
      * as inputs.
      *
-     * @param spawn_position_lists                  An array of arrays
-     *                                              listing the spawn
-     *                                              positions for each
-     *                                              player indexed by the
-     *                                              player index. Takes
-     *                                              ownership over all of
-     *                                              these arrays.
-     * @param spawn_position_count_by_player_index  How many spawn positions
-     *                                              each player has indexed
-     *                                              by the player index.
-     *                                              Takes ownership.
+     * @param spawn_position_lists                  An array of spawn position
+     *                                              lists indexed by the player.
      * @param player_count                          The number of players
      *                                              in the setup phase.
      * @param first_turn_after_setup_player_index   The index of the first
