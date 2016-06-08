@@ -19,6 +19,7 @@
 #include "IBoard.hpp"
 #include "MatchContext.hpp"
 #include "OnPlayerSurrender.hpp"
+#include "Spawn.hpp"
 
 namespace {
     /**
@@ -38,7 +39,7 @@ namespace {
                              kettle::utils::UserInfo & player_parameters) {
         const game::positionid_t * spawn_positions = spawn_positions_by_player_index[ context->current_player_turn ];
         unsigned int spawn_position_count = spawn_position_count_by_player_index[ context->current_player_turn ];
-        player_parameters.put(game::player_action::setup::kSpawnLocations, spawn_positions, spawn_position_count);
+        player_parameters.put(game::player_action::kSpawnLocations, spawn_positions, spawn_position_count);
     }
     
     /**
@@ -65,159 +66,9 @@ namespace {
         o_action_parameters->clear();
         game::IPlayer * player = context->getCurrentPlayer();
         return player->act(context,
-                           game::player_action::setup::kPhase,
+                           game::player_action::kSetupPhase,
                            &player_parameters,
                            o_action_parameters);
-    }
-    
-    /**
-     * Sends a message that the spawn failed.
-     *
-     * @param context               The match context.
-     * @param message_sender        The sender of the message for the spawn
-     *                              message.
-     * @param action_parameters     The parameters to perform the spawn.
-     */
-    void onSpawnFailed(game::MatchContext * context,
-                       const kettle::utils::ISender * message_sender,
-                       const kettle::utils::UserInfo & action_parameters) {
-        context->messaging->post(game::kSpawnFailed,
-                                 message_sender,
-                                 &action_parameters);
-    }
-    
-    /**
-     * Spawns a piece.
-     *
-     * @param context               The match context.
-     * @param piece                 The piece to spawn onto the board.
-     * @param spawn_position_id     The ID of the position to spawn.
-     * @param message_sender        The sender of the message for the spawn
-     *                              message.
-     * @param action_parameters     The parameters to perform the spawn.
-     */
-    void spawn(game::MatchContext * context,
-               game::IPiece * piece,
-               unsigned int spawn_position_id,
-               const kettle::utils::ISender * message_sender,
-               const kettle::utils::UserInfo & action_parameters) {
-        if(context->board->setPieceAt(piece, spawn_position_id)) {
-            if(context->addPieceToCurrentPlayer(piece)) {
-                context->messaging->post(game::player_action::setup::kSpawn,
-                                         message_sender,
-                                         &action_parameters);
-            }
-            else {
-                context->board->removePiece(piece);
-                delete piece;
-                onSpawnFailed(context, message_sender, action_parameters);
-            }
-        }
-        else {
-            delete piece;
-            onSpawnFailed(context, message_sender, action_parameters);
-        }
-    }
-    
-    /**
-     * Spawns a piece.
-     *
-     * @param context               The match context.
-     * @param type                  The type of piece to spawn onto the board.
-     * @param spawn_position_id     The ID of the position to spawn.
-     * @param message_sender        The sender of the message for the spawn
-     *                              message.
-     * @param action_parameters     The parameters to perform the spawn.
-     */
-    void spawn(game::MatchContext * context,
-               unsigned int type,
-               unsigned int spawn_position_id,
-               const kettle::utils::ISender * message_sender,
-               const kettle::utils::UserInfo & action_parameters) {
-        game::IPlayer * player = context->getCurrentPlayer();
-        game::IPiece * piece = player->spawn(type);
-        if(piece) {
-            spawn(context,
-                  piece,
-                  spawn_position_id,
-                  message_sender,
-                  action_parameters);
-        }
-        else {
-            onSpawnFailed(context, message_sender, action_parameters);
-        }
-    }
-    
-    /**
-     * Spawns a piece.
-     *
-     * @param context                               The match context.
-     * @param spawn_positions_by_player_index       The spawn positions for
-     *                                              each player.
-     * @param spawn_position_count_by_player_index  The spawn limit for each
-     *                                              player.
-     * @param type                                  The type of piece to spawn
-     *                                              onto the board.
-     * @param spawn_position_index                  The index of the spawn
-     *                                              position in the player's
-     *                                              spawn positions.
-     * @param message_sender                        The sender of the message
-     *                                              for the spawn message.
-     * @param action_parameters                     The parameters to perform
-     *                                              the spawn.
-     */
-    void spawn(game::MatchContext * context,
-               const game::positionid_t * const * spawn_positions_by_player_index,
-               const unsigned int * spawn_position_count_by_player_index,
-               unsigned int type,
-               unsigned int spawn_position_index,
-               const kettle::utils::ISender * message_sender,
-               const kettle::utils::UserInfo & action_parameters) {
-        unsigned int spawn_position_count = spawn_position_count_by_player_index[ context->current_player_turn ];
-        if(spawn_position_index < spawn_position_count) {
-            const game::positionid_t * spawn_positions = spawn_positions_by_player_index[ context->current_player_turn ];
-            game::positionid_t spawn_position_id = spawn_positions[ spawn_position_index ];
-            spawn(context, type, spawn_position_id, message_sender, action_parameters);
-        }
-        else {
-            onSpawnFailed(context, message_sender, action_parameters);
-        }
-    }
-    
-    /**
-     * Spawns a piece.
-     *
-     * @param context                               The match context.
-     * @param spawn_positions_by_player_index       The spawn positions for
-     *                                              each player.
-     * @param spawn_position_count_by_player_index  The spawn limit for each
-     *                                              player.
-     * @param message_sender                        The sender of the message
-     *                                              for the spawn message.
-     * @param action_parameters                     The parameters to perform
-     *                                              the spawn.
-     */
-    void spawn(game::MatchContext * context,
-               const game::positionid_t * const * spawn_positions_by_player_index,
-               const unsigned int * spawn_position_count_by_player_index,
-               const kettle::utils::ISender * message_sender,
-               const kettle::utils::UserInfo & action_parameters) {
-        if(action_parameters.isKeyOfType(game::player_action::setup::kPieceType, kettle::utils::kUserInfoTypeInt) &&
-           action_parameters.isKeyOfType(game::player_action::setup::kPositionIndex, kettle::utils::kUserInfoTypeInt))
-        {
-            unsigned int type = action_parameters.getInt(game::player_action::setup::kPieceType);
-            unsigned int spawn_position_index = action_parameters.getInt(game::player_action::setup::kPositionIndex);
-            spawn(context,
-                  spawn_positions_by_player_index,
-                  spawn_position_count_by_player_index,
-                  type,
-                  spawn_position_index,
-                  message_sender,
-                  action_parameters);
-        }
-        else {
-            onSpawnFailed(context, message_sender, action_parameters);
-        }
     }
     
     /**
@@ -333,14 +184,14 @@ namespace game {
             if(action == player_action::kThinking) {
                 return kPhaseUpdateBreakReasonWaitingOnPlayer;
             }
-            else if(action == player_action::setup::kSpawn) {
-                spawn(context,
-                      m_spawn_positions_by_player_index,
-                      m_spawn_position_count_by_player_index,
-                      this,
-                      action_parameters);
+            else if(action == player_action::kSpawn) {
+                spawnPiece(context,
+                           m_spawn_positions_by_player_index,
+                           m_spawn_position_count_by_player_index,
+                           this,
+                           &action_parameters);
             }
-            else if(action == player_action::setup::kFinishedSpawning) {
+            else if(action == player_action::kFinishedSpawning) {
                 break;
             }
             else if(action == player_action::kSurrender) {

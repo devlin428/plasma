@@ -44,6 +44,8 @@
 		1DB211201D05D4440092E721 /* SetupPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2111E1D05D4440092E721 /* SetupPhase.cpp */; };
 		1DB211281D0669C00092E721 /* OnPlayerSurrender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211261D0669C00092E721 /* OnPlayerSurrender.cpp */; };
 		1DB2112E1D0792320092E721 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2112C1D0792320092E721 /* Log.cpp */; };
+		1DB211321D07CAA40092E721 /* TestPhaseSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211301D07CAA40092E721 /* TestPhaseSetup.cpp */; };
+		1DB211361D08794A0092E721 /* Spawn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211341D08794A0092E721 /* Spawn.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -142,6 +144,10 @@
 		1DB2112C1D0792320092E721 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = ../../../kettle/utils/Log.cpp; sourceTree = "<group>"; };
 		1DB2112D1D0792320092E721 /* Log.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Log.hpp; path = ../../../kettle/utils/Log.hpp; sourceTree = "<group>"; };
 		1DB2112F1D079BF50092E721 /* StringHash.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = StringHash.inl; path = ../../../kettle/utils/StringHash.inl; sourceTree = "<group>"; };
+		1DB211301D07CAA40092E721 /* TestPhaseSetup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPhaseSetup.cpp; sourceTree = "<group>"; };
+		1DB211311D07CAA40092E721 /* TestPhaseSetup.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhaseSetup.hpp; sourceTree = "<group>"; };
+		1DB211341D08794A0092E721 /* Spawn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Spawn.cpp; path = ../rules/Spawn.cpp; sourceTree = "<group>"; };
+		1DB211351D08794A0092E721 /* Spawn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Spawn.hpp; path = ../rules/Spawn.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,8 @@
 				1DB2110F1D04F90F0092E721 /* TestMatchCondition.hpp */,
 				1DB2111A1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp */,
 				1DB2111B1D0528890092E721 /* TestPhaseRulesByInterfaces.hpp */,
+				1DB211301D07CAA40092E721 /* TestPhaseSetup.cpp */,
+				1DB211311D07CAA40092E721 /* TestPhaseSetup.hpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 			children = (
 				1DB2110D1D04F7B30092E721 /* MatchCondition */,
 				1DB2111D1D05376A0092E721 /* PhaseRules */,
+				1DB211331D0879170092E721 /* Moves */,
 				1DB211011D04F3120092E721 /* RuleTypes.h */,
 				1DB210AB1D04F1DC0092E721 /* Match.cpp */,
 				1DB210AC1D04F1DC0092E721 /* Match.hpp */,
@@ -340,6 +349,15 @@
 			name = PhaseRules;
 			sourceTree = "<group>";
 		};
+		1DB211331D0879170092E721 /* Moves */ = {
+			isa = PBXGroup;
+			children = (
+				1DB211341D08794A0092E721 /* Spawn.cpp */,
+				1DB211351D08794A0092E721 /* Spawn.hpp */,
+			);
+			name = Moves;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,6 +417,7 @@
 				1DB210E71D04F29E0092E721 /* Messaging.cpp in Sources */,
 				1DB211021D04F3120092E721 /* IMatchCondition.cpp in Sources */,
 				1DB211281D0669C00092E721 /* OnPlayerSurrender.cpp in Sources */,
+				1DB211321D07CAA40092E721 /* TestPhaseSetup.cpp in Sources */,
 				1DB210DC1D04F2810092E721 /* IBoardLayout.cpp in Sources */,
 				1DB211061D04F3120092E721 /* MatchConditionFunctionPointer.cpp in Sources */,
 				1DB210DA1D04F2810092E721 /* Board.cpp in Sources */,
@@ -418,6 +437,7 @@
 				1DB210E91D04F29E0092E721 /* StringHash.cpp in Sources */,
 				1DB211031D04F3120092E721 /* IPhaseRules.cpp in Sources */,
 				1DB210EA1D04F29E0092E721 /* UserInfo.cpp in Sources */,
+				1DB211361D08794A0092E721 /* Spawn.cpp in Sources */,
 				1DB211051D04F3120092E721 /* MatchConditionBuilder.cpp in Sources */,
 				1DB210C31D04F23F0092E721 /* Vector2d.cpp in Sources */,
 				1DB210C61D04F23F0092E721 /* Vector3dTemplate.cpp in Sources */,

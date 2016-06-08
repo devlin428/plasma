@@ -9,10 +9,12 @@
 #include "TestMatch.hpp"
 #include "TestMatchCondition.hpp"
 #include "TestPhaseRulesByInterfaces.hpp"
+#include "TestPhaseSetup.hpp"
 
 int main(int argc, const char * argv[]) {
     testMatch();
     testMatchCondition();
     testPhaseRulesByInterfaces();
+    testSetupPhase();
     return 0;
 }

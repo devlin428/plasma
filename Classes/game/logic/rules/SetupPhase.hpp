@@ -17,9 +17,6 @@
 #include "BoardTypes.h"
 
 namespace game {
-    
-    const kettle::utils::StringHash kSpawnFailed("Spawn Failed");
-    
     const kettle::utils::StringHash kPlayerFinishedSetup("Player finished setup");
     const kettle::utils::StringHash kMessageKeyPlayerIndex("Player index");
     
