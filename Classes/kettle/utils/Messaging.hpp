@@ -15,13 +15,25 @@ namespace kettle {
 namespace utils {
     class UserInfo;
     
+    /**
+     * Interface for objects that send messages.
+     */
     class ISender {
     public:
+        /**
+         * Deconstructor.
+         */
         virtual ~ISender() {}
         
+        /**
+         * Gets the type of the sender for downcasting.
+         */
         virtual StringHash getType() const = 0;
         
     protected:
+        /**
+         * Constructor.
+         */
         ISender() {}
         
     private:
@@ -30,19 +42,45 @@ namespace utils {
         void operator=(const ISender &);
     }; // class ISender
     
+    /**
+     * Bundles together data to make a message.
+     */
     struct Message {
-        const StringHash code;
-        const ISender * const sender;
-        const UserInfo * const user_info;
+        /**
+         * The message code.
+         */
+        StringHash code;
+        
+        /**
+         * The sender of the message. May be null.
+         */
+        const ISender * sender;
+        
+        /**
+         * Extra data for the message. May be null.
+         */
+        const UserInfo * user_info;
     }; // struct Message
     
+    /**
+     * An interface for receiving messages.
+     */
     class IMessageReceiver {
     public:
+        /**
+         * Deconstructor.
+         */
         virtual ~IMessageReceiver() {}
         
-        virtual void receive(const Message * message) const = 0;
+        /**
+         * Receives a message.
+         */
+        virtual void receive(const Message & message) const = 0;
         
     protected:
+        /**
+         * Constructor.
+         */
         IMessageReceiver() {}
         
     private:
@@ -51,24 +89,80 @@ namespace utils {
         void operator=(const IMessageReceiver &);
     }; // class IMessageReceiver
     
+    /**
+     * Value to specify that any message can be received.
+     */
     const StringHash kMessageCodeAny("any message");
     
+    /**
+     * A messaging system.
+     */
     class Messaging {
     public:
+        /**
+         * Constructor.
+         */
         Messaging();
+        
+        /**
+         * Deconstructor.
+         */
         ~Messaging();
         
+        /**
+         * Adds a message reciever.
+         *
+         * @param message_receiver  The receiver to get messages.
+         * @param code              The message code the receiver can obtain.
+         *                          Set to kMessageCodeAny to receive all
+         *                          message codes.
+         * @param sender            The sender the receiver can obtain. Set to
+         *                          null to receive from any sender.
+         */
         void addMessageReceiver(IMessageReceiver * message_receiver,
                                 StringHash code = kMessageCodeAny,
                                 const ISender * sender = nullptr);
         
+        /**
+         * Removes a message reciever.
+         *
+         * @param message_receiver  The receiver to get messages.
+         * @param code              The message code that was registered.
+         * @param sender            The sender that was registered.
+         */
+        void removeMessageReceiver(IMessageReceiver * message_receiver,
+                                   StringHash code = kMessageCodeAny,
+                                   const ISender * sender = nullptr);
+        
+        /**
+         * Removes a message reciever from receiving any messages.
+         *
+         * @param message_receiver  The receiver to get messages.
+         */
+        void removeMessageReceiver(IMessageReceiver * message_receiver);
+        
+        /**
+         * Send a message.
+         *
+         * @param code          The message code.
+         * @param sender        The sender of the message.
+         * @param user_info     Extra info of the message.
+         */
         void post(StringHash code,
                   const ISender * sender = nullptr,
-                  const UserInfo * user_info = nullptr);
+                  const UserInfo * user_info = nullptr) const;
         
-        void post(const Message & message);
+        /**
+         * Send a message.
+         *
+         * @param message   The message.
+         */
+        void post(const Message & message) const;
         
     protected:
+        /**
+         * The private implementation.
+         */
         struct PrivateImplementation;
         PrivateImplementation * m_private_implementation;
         

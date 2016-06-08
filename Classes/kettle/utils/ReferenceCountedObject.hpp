@@ -35,8 +35,10 @@ namespace utils {
         /**
          * Decreaments the reference count. This will be deleted when the
          * reference count hits zero.
+         *
+         * @return      True if this object was deleted.
          */
-        void release();
+        bool release();
         
     protected:
         unsigned int m_reference_count;

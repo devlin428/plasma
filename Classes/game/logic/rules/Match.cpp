@@ -19,8 +19,9 @@
 #include "IBoard.hpp"
 
 namespace {
-    void nextPhase(const game::IPhaseRules * phase_rules, game::phase_t & io_phase) {
+    void nextPhase(game::IPhaseRules * phase_rules, const game::MatchContext * context, game::phase_t & io_phase) {
         io_phase = phase_rules->getNextPhase(io_phase);
+        phase_rules->initializePhase(context, io_phase);
     }
 } // namespace
 
@@ -53,16 +54,20 @@ namespace game {
         
         kettle::utils::Messaging * messaging = new kettle::utils::Messaging();
         
-        return new Match(players_copy,
-                         number_of_players,
-                         
-                         all_pieces,
-                         pieces_by_player,
-                         max_pieces_by_player_copy,
-                         
-                         board,
-                         phase_rules,
-                         messaging);
+        Match * match = new Match(players_copy,
+                                  number_of_players,
+                                  
+                                  all_pieces,
+                                  pieces_by_player,
+                                  max_pieces_by_player_copy,
+                                  
+                                  board,
+                                  phase_rules,
+                                  messaging);
+        
+        phase_rules->initializePhase(&match->m_context, match->m_phase);
+        
+        return match;
     }
     
     Match::~Match() {
@@ -100,13 +105,13 @@ namespace game {
             switch (phase_break_reason) {
                 case kPhaseUpdateBreakReasonPhaseEndQuicksavePoint:
                     // Update the phase and leave the quicksave point.
-                    nextPhase(m_phase_rules, m_phase);
+                    nextPhase(m_phase_rules, &m_context, m_phase);
                     
                 case kPhaseUpdateBreakReasonQuicksavePoint:
                     return kMatchUpdateBreakReasonQuicksavePoint;
                     
                 case kPhaseUpdateBreakReasonPhaseEnd:
-                    nextPhase(m_phase_rules, m_phase);
+                    nextPhase(m_phase_rules, &m_context, m_phase);
                     
                     // Check to see if the phase is the end of the game.
                     if( m_phase == kPhaseEnd ) {

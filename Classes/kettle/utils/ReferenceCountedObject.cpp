@@ -17,10 +17,12 @@ namespace utils {
         ++m_reference_count;
     }
     
-    void ReferenceCountedObject::release() {
+    bool ReferenceCountedObject::release() {
         if(--m_reference_count == 0) {
             delete this;
+            return true;
         }
+        return false;
     }
 } // namespace utils
 } // namespace kettle

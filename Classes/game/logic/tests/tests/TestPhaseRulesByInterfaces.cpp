@@ -32,10 +32,9 @@ namespace {
         TestPhaseRule(const char * name) : m_name(name) {}
         ~TestPhaseRule() {}
         
-        IPhaseRule * initialize() {
+        void initialize(const MatchContext * context) {
             cout << "Initialize phase " << m_name << endl;
             --phase_changes_remaining;
-            return this;
         }
         
         PhaseUpdateBreakReason update(MatchContext * context) {
@@ -90,7 +89,7 @@ int testPhaseRulesByInterfaces() {
             case game::kPhaseUpdateBreakReasonPhaseEndQuicksavePoint:
             case game::kPhaseUpdateBreakReasonPhaseEnd:
                 current_phase = phase_rules->getNextPhase(current_phase);
-                phase_rules->initializePhase(current_phase);
+                phase_rules->initializePhase(context, current_phase);
                 
             case game::kPhaseUpdateBreakReasonQuicksavePoint:
             case game::kPhaseUpdateBreakReasonWaitingOnPlayer:

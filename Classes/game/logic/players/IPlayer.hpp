@@ -9,10 +9,29 @@
 #ifndef IPlayer_hpp
 #define IPlayer_hpp
 
+#include "PlayerActions.h"
+
+namespace kettle {
+namespace utils {
+    class UserInfo;
+} // namespace utils
+} // namespace kettle
+
 namespace game {
+    struct MatchContext;
+    
+    class IPiece;
+    
     class IPlayer {
     public:
         virtual ~IPlayer() {}
+        
+        virtual player_action::action_t act(const MatchContext * context,
+                                            player_action::phase_t phase,
+                                            const kettle::utils::UserInfo * phase_info,
+                                            kettle::utils::UserInfo * o_action_info) = 0;
+        
+        virtual IPiece * spawn(unsigned int type);
         
     protected:
         IPlayer() {}

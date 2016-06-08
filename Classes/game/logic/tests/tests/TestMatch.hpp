@@ -16,16 +16,20 @@ int testMatch();
 /*
  * OUTPUT:
  
+ Initialize phase 0
  Setup update
  Waiting
  Setup update
+ Initialize phase 1
  Quicksave
  Upkeep update
  Quicksave
  Upkeep update
+ Initialize phase 2
  Turn update
  Waiting
  Turn update
+ Initialize phase 1
  Quicksave
  Upkeep update
  Quicksave

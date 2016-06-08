@@ -28,4 +28,45 @@ namespace game {
     inline unsigned int MatchContext::getMaxPieces(unsigned int player_index) const {
         return max_pieces_by_player[ player_index ];
     }
+    
+    inline IPlayer * MatchContext::getCurrentPlayer() {
+        return getPlayer(current_player_turn);
+    }
+    
+    inline const IPlayer * MatchContext::getCurrentPlayer() const {
+        return getPlayer(current_player_turn);
+    }
+    
+    inline IPiece ** MatchContext::getCurrentPlayerPieces() {
+        return getPieces(current_player_turn);
+    }
+    
+    inline const IPiece * const * MatchContext::getCurrentPlayerPieces() const {
+        return getPieces(current_player_turn);
+    }
+    
+    inline IPiece * MatchContext::getCurentPlayerPiece(unsigned int piece_index) {
+        return getPiece(current_player_turn, piece_index);
+    }
+    
+    inline const IPiece * MatchContext::getCurentPlayerPiece(unsigned int piece_index) const {
+        return getPiece(current_player_turn, piece_index);
+    }
+    
+    inline MatchContext & MatchContext::setCurrentPlayerPiece(IPiece * piece,
+                                                              unsigned int piece_index) {
+        return setPiece(piece, current_player_turn, piece_index);
+    }
+    
+    inline bool MatchContext::addPieceToCurrentPlayer(IPiece * piece) {
+        return addPiece(piece, current_player_turn);
+    }
+    
+    inline unsigned int MatchContext::getMaxPiecesForCurrentPlayer() const {
+        return getMaxPieces(current_player_turn);
+    }
+    
+    inline unsigned int MatchContext::countPiecesForCurrentPlayer() const {
+        return countPiecesForPlayer(current_player_turn);
+    }
 } // namespace game

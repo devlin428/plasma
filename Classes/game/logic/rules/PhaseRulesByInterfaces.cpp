@@ -68,11 +68,11 @@ namespace game {
         }
     }
     
-    IPhaseRules * PhaseRulesByInterfaces::initializePhase(phase_t current_phase) {
+    void PhaseRulesByInterfaces::initializePhase(const MatchContext * context,
+                                                 phase_t current_phase) {
         if(current_phase >= 0) {
-            m_phase_rules[ current_phase ]->initialize();
+            m_phase_rules[ current_phase ]->initialize(context);
         }
-        return this;
     }
     
     PhaseUpdateBreakReason PhaseRulesByInterfaces::updatePhase(MatchContext * context,

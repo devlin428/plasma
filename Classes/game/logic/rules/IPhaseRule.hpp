@@ -12,15 +12,35 @@
 #include "RuleTypes.h"
 
 namespace game {
+    /**
+     * Handles one phase of the match.
+     */
     class IPhaseRule {
     public:
+        /**
+         * Deconstructor.
+         */
         virtual ~IPhaseRule() {}
         
-        virtual IPhaseRule * initialize() = 0;
+        /**
+         * Initializes the phase data.
+         *
+         * @param context           The match context.
+         */
+        virtual void initialize(const MatchContext * context) = 0;
         
+        /**
+         * Updates the phase.
+         *
+         * @param context           The match context.
+         * @return                  The reason this function returned.
+         */
         virtual PhaseUpdateBreakReason update(MatchContext * context) = 0;
         
     protected:
+        /**
+         * Constructor.
+         */
         IPhaseRule() {}
         
     private:

@@ -90,10 +90,11 @@ namespace game {
          * Initializes the phase. This is for setting up data such as limits to
          * player actions.
          *
+         * @param context           The match context.
          * @param current_phase     The current phase of the game.
-         * @return                  This instance.
          */
-        IPhaseRules * initializePhase(phase_t current_phase);
+        void initializePhase(const MatchContext * context,
+                             phase_t current_phase);
         
         /**
          * Updates the phase.

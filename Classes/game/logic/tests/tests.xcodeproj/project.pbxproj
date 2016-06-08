@@ -41,6 +41,9 @@
 		1DB211161D0516FF0092E721 /* EndCondition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211141D0516FF0092E721 /* EndCondition.cpp */; };
 		1DB211191D0523FA0092E721 /* IPhaseRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211171D0523FA0092E721 /* IPhaseRule.cpp */; };
 		1DB2111C1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2111A1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp */; };
+		1DB211201D05D4440092E721 /* SetupPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2111E1D05D4440092E721 /* SetupPhase.cpp */; };
+		1DB211281D0669C00092E721 /* OnPlayerSurrender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211261D0669C00092E721 /* OnPlayerSurrender.cpp */; };
+		1DB2112E1D0792320092E721 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2112C1D0792320092E721 /* Log.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -130,6 +133,15 @@
 		1DB211181D0523FA0092E721 /* IPhaseRule.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IPhaseRule.hpp; path = ../rules/IPhaseRule.hpp; sourceTree = "<group>"; };
 		1DB2111A1D0528890092E721 /* TestPhaseRulesByInterfaces.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPhaseRulesByInterfaces.cpp; sourceTree = "<group>"; };
 		1DB2111B1D0528890092E721 /* TestPhaseRulesByInterfaces.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhaseRulesByInterfaces.hpp; sourceTree = "<group>"; };
+		1DB2111E1D05D4440092E721 /* SetupPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SetupPhase.cpp; path = ../rules/SetupPhase.cpp; sourceTree = "<group>"; };
+		1DB2111F1D05D4440092E721 /* SetupPhase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SetupPhase.hpp; path = ../rules/SetupPhase.hpp; sourceTree = "<group>"; };
+		1DB211211D062E310092E721 /* PlayerActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlayerActions.h; path = ../players/PlayerActions.h; sourceTree = "<group>"; };
+		1DB211251D065F150092E721 /* PlayerActionsSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerActionsSetup.h; path = ../players/PlayerActionsSetup.h; sourceTree = "<group>"; };
+		1DB211261D0669C00092E721 /* OnPlayerSurrender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OnPlayerSurrender.cpp; path = ../rules/OnPlayerSurrender.cpp; sourceTree = "<group>"; };
+		1DB211271D0669C00092E721 /* OnPlayerSurrender.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OnPlayerSurrender.hpp; path = ../rules/OnPlayerSurrender.hpp; sourceTree = "<group>"; };
+		1DB2112C1D0792320092E721 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = ../../../kettle/utils/Log.cpp; sourceTree = "<group>"; };
+		1DB2112D1D0792320092E721 /* Log.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Log.hpp; path = ../../../kettle/utils/Log.hpp; sourceTree = "<group>"; };
+		1DB2112F1D079BF50092E721 /* StringHash.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = StringHash.inl; path = ../../../kettle/utils/StringHash.inl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +158,8 @@
 		1DB210911D04F0D60092E721 = {
 			isa = PBXGroup;
 			children = (
-				1DB210A41D04F1350092E721 /* code */,
+				1DB210A61D04F15B0092E721 /* kettle */,
+				1DB210A51D04F14C0092E721 /* game */,
 				1DB2109C1D04F0D60092E721 /* tests */,
 				1DB2109B1D04F0D60092E721 /* Products */,
 			);
@@ -174,15 +187,6 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
-		1DB210A41D04F1350092E721 /* code */ = {
-			isa = PBXGroup;
-			children = (
-				1DB210A61D04F15B0092E721 /* kettle */,
-				1DB210A51D04F14C0092E721 /* game */,
-			);
-			name = code;
-			sourceTree = "<group>";
-		};
 		1DB210A51D04F14C0092E721 /* game */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,18 +211,15 @@
 			isa = PBXGroup;
 			children = (
 				1DB2110D1D04F7B30092E721 /* MatchCondition */,
+				1DB2111D1D05376A0092E721 /* PhaseRules */,
 				1DB211011D04F3120092E721 /* RuleTypes.h */,
 				1DB210AB1D04F1DC0092E721 /* Match.cpp */,
 				1DB210AC1D04F1DC0092E721 /* Match.hpp */,
 				1DB210AD1D04F1DC0092E721 /* MatchContext.cpp */,
 				1DB210AE1D04F1DC0092E721 /* MatchContext.hpp */,
 				1DB210FE1D04F3120092E721 /* MatchContext.inl */,
-				1DB210F11D04F3120092E721 /* IPhaseRules.cpp */,
-				1DB210F21D04F3120092E721 /* IPhaseRules.hpp */,
-				1DB211111D0515060092E721 /* PhaseRulesByInterfaces.cpp */,
-				1DB211121D0515060092E721 /* PhaseRulesByInterfaces.hpp */,
-				1DB211171D0523FA0092E721 /* IPhaseRule.cpp */,
-				1DB211181D0523FA0092E721 /* IPhaseRule.hpp */,
+				1DB211261D0669C00092E721 /* OnPlayerSurrender.cpp */,
+				1DB211271D0669C00092E721 /* OnPlayerSurrender.hpp */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -260,15 +261,15 @@
 		1DB210D01D04F26B0092E721 /* board */ = {
 			isa = PBXGroup;
 			children = (
-				1DB210D11D04F2810092E721 /* Board.cpp */,
-				1DB210D21D04F2810092E721 /* Board.hpp */,
 				1DB210D31D04F2810092E721 /* BoardTypes.h */,
 				1DB210D41D04F2810092E721 /* IBoard.cpp */,
 				1DB210D51D04F2810092E721 /* IBoard.hpp */,
-				1DB210D61D04F2810092E721 /* IBoardLayout.cpp */,
-				1DB210D71D04F2810092E721 /* IBoardLayout.hpp */,
 				1DB210D81D04F2810092E721 /* RouteSet.cpp */,
 				1DB210D91D04F2810092E721 /* RouteSet.hpp */,
+				1DB210D11D04F2810092E721 /* Board.cpp */,
+				1DB210D21D04F2810092E721 /* Board.hpp */,
+				1DB210D61D04F2810092E721 /* IBoardLayout.cpp */,
+				1DB210D71D04F2810092E721 /* IBoardLayout.hpp */,
 			);
 			name = board;
 			sourceTree = "<group>";
@@ -282,8 +283,11 @@
 				1DB210E21D04F29E0092E721 /* ReferenceCountedObject.hpp */,
 				1DB210E31D04F29E0092E721 /* StringHash.cpp */,
 				1DB210E41D04F29E0092E721 /* StringHash.hpp */,
+				1DB2112F1D079BF50092E721 /* StringHash.inl */,
 				1DB210E51D04F29E0092E721 /* UserInfo.cpp */,
 				1DB210E61D04F29E0092E721 /* UserInfo.hpp */,
+				1DB2112C1D0792320092E721 /* Log.cpp */,
+				1DB2112D1D0792320092E721 /* Log.hpp */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -291,6 +295,8 @@
 		1DB210EB1D04F2AC0092E721 /* players */ = {
 			isa = PBXGroup;
 			children = (
+				1DB211211D062E310092E721 /* PlayerActions.h */,
+				1DB211251D065F150092E721 /* PlayerActionsSetup.h */,
 				1DB210EC1D04F2D40092E721 /* IPlayer.cpp */,
 				1DB210ED1D04F2D40092E721 /* IPlayer.hpp */,
 			);
@@ -317,6 +323,21 @@
 				1DB211151D0516FF0092E721 /* EndCondition.hpp */,
 			);
 			name = MatchCondition;
+			sourceTree = "<group>";
+		};
+		1DB2111D1D05376A0092E721 /* PhaseRules */ = {
+			isa = PBXGroup;
+			children = (
+				1DB210F11D04F3120092E721 /* IPhaseRules.cpp */,
+				1DB210F21D04F3120092E721 /* IPhaseRules.hpp */,
+				1DB211111D0515060092E721 /* PhaseRulesByInterfaces.cpp */,
+				1DB211121D0515060092E721 /* PhaseRulesByInterfaces.hpp */,
+				1DB211171D0523FA0092E721 /* IPhaseRule.cpp */,
+				1DB211181D0523FA0092E721 /* IPhaseRule.hpp */,
+				1DB2111E1D05D4440092E721 /* SetupPhase.cpp */,
+				1DB2111F1D05D4440092E721 /* SetupPhase.hpp */,
+			);
+			name = PhaseRules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +398,7 @@
 			files = (
 				1DB210E71D04F29E0092E721 /* Messaging.cpp in Sources */,
 				1DB211021D04F3120092E721 /* IMatchCondition.cpp in Sources */,
+				1DB211281D0669C00092E721 /* OnPlayerSurrender.cpp in Sources */,
 				1DB210DC1D04F2810092E721 /* IBoardLayout.cpp in Sources */,
 				1DB211061D04F3120092E721 /* MatchConditionFunctionPointer.cpp in Sources */,
 				1DB210DA1D04F2810092E721 /* Board.cpp in Sources */,
@@ -390,6 +412,7 @@
 				1DB210AF1D04F1DC0092E721 /* Match.cpp in Sources */,
 				1DB210C41D04F23F0092E721 /* Vector2dTemplate.cpp in Sources */,
 				1DB210E81D04F29E0092E721 /* ReferenceCountedObject.cpp in Sources */,
+				1DB211201D05D4440092E721 /* SetupPhase.cpp in Sources */,
 				1DB211101D04F90F0092E721 /* TestMatchCondition.cpp in Sources */,
 				1DB211081D04F3120092E721 /* MatchConditionOr.cpp in Sources */,
 				1DB210E91D04F29E0092E721 /* StringHash.cpp in Sources */,
@@ -408,6 +431,7 @@
 				1DB210C21D04F23F0092E721 /* Operations.cpp in Sources */,
 				1DB210C51D04F23F0092E721 /* Vector3d.cpp in Sources */,
 				1DB211071D04F3120092E721 /* MatchConditionNot.cpp in Sources */,
+				1DB2112E1D0792320092E721 /* Log.cpp in Sources */,
 				1DB211161D0516FF0092E721 /* EndCondition.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

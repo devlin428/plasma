@@ -54,9 +54,9 @@ public:
     TestPhaseRules() {}
     ~TestPhaseRules() {}
     
-    IPhaseRules * initializePhase(phase_t current_phase) {
+    void initializePhase(const MatchContext * context,
+                         phase_t current_phase) {
         cout << "Initialize phase " << current_phase << endl;
-        return this;
     }
     
     PhaseUpdateBreakReason updatePhase(MatchContext * context,
@@ -110,6 +110,10 @@ public:
     }
     
     IPiece * removePieceAt(positionid_t position_id) const {
+        return nullptr;
+    }
+    
+    IPiece * removePiece(IPiece * piece) const {
         return nullptr;
     }
     

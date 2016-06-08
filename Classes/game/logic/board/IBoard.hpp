@@ -29,6 +29,7 @@ namespace game {
          */
         virtual bool setPieceAt(IPiece * piece, positionid_t position_id) = 0;
         virtual IPiece * removePieceAt(positionid_t position_id) const = 0;
+        virtual IPiece * removePiece(IPiece * piece) const = 0;
         
         virtual spaces_t getMaxAdjacentIds() const = 0;
         
