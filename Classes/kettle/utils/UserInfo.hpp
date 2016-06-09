@@ -65,7 +65,7 @@ namespace utils {
         /**
          * Checks if the key has the given value type.
          */
-        bool isKeyOfType(StringHash key, UserInfoType type) const;
+        bool isKeyOfType(hash_t key, UserInfoType type) const;
         
         /**
          * Sets an integer.
@@ -74,7 +74,7 @@ namespace utils {
          * @param value     The value to store.
          * @return          This instance.
          */
-        UserInfo & put(StringHash key, int value);
+        UserInfo & put(hash_t key, int value);
         
         /**
          * Gets an integer.
@@ -82,7 +82,7 @@ namespace utils {
          * @param key   The key to retrieve a value.
          * @return      The value or 0 if the value was absent.
          */
-        int getInt(StringHash key) const;
+        int getInt(hash_t key) const;
         
         /**
          * Sets an array.
@@ -92,7 +92,7 @@ namespace utils {
          * @param length    The length of the array.
          * @return          This instance.
          */
-        UserInfo & put(StringHash key, const int * array, unsigned int length);
+        UserInfo & put(hash_t key, const int * array, unsigned int length);
         
         /**
          * Gets an array.
@@ -109,7 +109,7 @@ namespace utils {
          * @return              The length of the array or 0 if the value was
          *                      absent.
          */
-        unsigned int getArray(StringHash key,
+        unsigned int getArray(hash_t key,
                               int ** o_array = nullptr,
                               unsigned int array_length = 0) const;
         
@@ -121,7 +121,7 @@ namespace utils {
          * @param length    The length of the array.
          * @return          This instance.
          */
-        UserInfo & put(StringHash key,
+        UserInfo & put(hash_t key,
                        const unsigned int * array,
                        unsigned int length);
         
@@ -140,7 +140,7 @@ namespace utils {
          * @return              The length of the array or 0 if the value was
          *                      absent.
          */
-        unsigned int getArray(StringHash key,
+        unsigned int getArray(hash_t key,
                               unsigned int ** o_array = nullptr,
                               unsigned int array_length = 0) const;
         

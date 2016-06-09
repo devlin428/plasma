@@ -20,6 +20,7 @@
 #include "MatchContext.hpp"
 #include "OnPlayerSurrender.hpp"
 #include "Spawn.hpp"
+#include "MessageKeys.h"
 
 namespace {
     /**
@@ -206,11 +207,11 @@ namespace game {
                                      this);
     }
     
-    kettle::utils::StringHash SetupPhase::getType() const {
+    kettle::utils::hash_t SetupPhase::getType() const {
         return SetupPhase::getType();
     }
     
-    kettle::utils::StringHash SetupPhase::getClassType() {
-        return kettle::utils::StringHash("SetupPhase");
+    kettle::utils::hash_t SetupPhase::getClassType() {
+        return kettle::utils::hashCString("SetupPhase");
     }
 } // namespace game

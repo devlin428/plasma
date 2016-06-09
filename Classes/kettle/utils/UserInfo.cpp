@@ -39,8 +39,8 @@ namespace {
 namespace kettle {
 namespace utils {
     struct UserInfo::PrivateImplementation {
-        std::map<StringHash, int> int_map;
-        std::map<StringHash, Array> int_array_map;
+        std::map<hash_t, int> int_map;
+        std::map<hash_t, Array> int_array_map;
     }; // struct UserInfo::PrivateImplementation
     
     UserInfo::UserInfo() : m_private_implementation(new PrivateImplementation()) {}
@@ -58,7 +58,7 @@ namespace utils {
         
         copy->m_private_implementation->int_map = m_private_implementation->int_map;
         
-        for(std::map<StringHash, Array>::iterator iter =
+        for(std::map<hash_t, Array>::iterator iter =
                     m_private_implementation->int_array_map.begin();
             iter != m_private_implementation->int_array_map.end();
             ++iter) {
@@ -76,14 +76,14 @@ namespace utils {
         
         std::for_each(m_private_implementation->int_array_map.begin(),
                       m_private_implementation->int_array_map.end(),
-                      [](std::pair<StringHash, Array> pair){
+                      [](std::pair<hash_t, Array> pair){
                           delete [] pair.second.array;
                       });
         
         return *this;
     }
     
-    bool UserInfo::isKeyOfType(StringHash key, UserInfoType type) const {
+    bool UserInfo::isKeyOfType(hash_t key, UserInfoType type) const {
         switch (type) {
             case kUserInfoTypeVoid:
                 return m_private_implementation->int_map.count(key) +
@@ -97,22 +97,22 @@ namespace utils {
         }
     }
     
-    UserInfo & UserInfo::put(StringHash key, int value) {
+    UserInfo & UserInfo::put(hash_t key, int value) {
         m_private_implementation->int_map[ key ] = value;
         return *this;
     }
     
-    int UserInfo::getInt(StringHash key) const {
+    int UserInfo::getInt(hash_t key) const {
         return m_private_implementation->int_map[ key ];
     }
     
-    UserInfo & UserInfo::put(StringHash key, const int * array, unsigned int length) {
+    UserInfo & UserInfo::put(hash_t key, const int * array, unsigned int length) {
         const int * copy = copyArray(array, length);
         m_private_implementation->int_array_map[ key ] = { copy, length };
         return *this;
     }
     
-    unsigned int UserInfo::getArray(StringHash key,
+    unsigned int UserInfo::getArray(hash_t key,
                                     int ** o_array,
                                     unsigned int array_length) const {
         Array array = m_private_implementation->int_array_map[ key ];
@@ -129,7 +129,7 @@ namespace utils {
         return array.length;
     }
     
-    UserInfo & UserInfo::put(StringHash key,
+    UserInfo & UserInfo::put(hash_t key,
                              const unsigned int * array,
                              unsigned int length) {
         int * copy = new int[ length ];
@@ -138,7 +138,7 @@ namespace utils {
         return *this;
     }
     
-    unsigned int UserInfo::getArray(StringHash key,
+    unsigned int UserInfo::getArray(hash_t key,
                                     unsigned int ** o_array,
                                     unsigned int array_length) const {
         Array array = m_private_implementation->int_array_map[ key ];

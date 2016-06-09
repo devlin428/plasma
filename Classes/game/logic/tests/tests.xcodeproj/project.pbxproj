@@ -143,11 +143,11 @@
 		1DB211271D0669C00092E721 /* OnPlayerSurrender.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OnPlayerSurrender.hpp; path = ../rules/OnPlayerSurrender.hpp; sourceTree = "<group>"; };
 		1DB2112C1D0792320092E721 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = ../../../kettle/utils/Log.cpp; sourceTree = "<group>"; };
 		1DB2112D1D0792320092E721 /* Log.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Log.hpp; path = ../../../kettle/utils/Log.hpp; sourceTree = "<group>"; };
-		1DB2112F1D079BF50092E721 /* StringHash.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = StringHash.inl; path = ../../../kettle/utils/StringHash.inl; sourceTree = "<group>"; };
 		1DB211301D07CAA40092E721 /* TestPhaseSetup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPhaseSetup.cpp; sourceTree = "<group>"; };
 		1DB211311D07CAA40092E721 /* TestPhaseSetup.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhaseSetup.hpp; sourceTree = "<group>"; };
 		1DB211341D08794A0092E721 /* Spawn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Spawn.cpp; path = ../rules/Spawn.cpp; sourceTree = "<group>"; };
 		1DB211351D08794A0092E721 /* Spawn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Spawn.hpp; path = ../rules/Spawn.hpp; sourceTree = "<group>"; };
+		1DB211371D0904C30092E721 /* MessageKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageKeys.h; path = ../rules/MessageKeys.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +229,7 @@
 				1DB210FE1D04F3120092E721 /* MatchContext.inl */,
 				1DB211261D0669C00092E721 /* OnPlayerSurrender.cpp */,
 				1DB211271D0669C00092E721 /* OnPlayerSurrender.hpp */,
+				1DB211371D0904C30092E721 /* MessageKeys.h */,
 			);
 			name = rules;
 			sourceTree = "<group>";
@@ -292,7 +293,6 @@
 				1DB210E21D04F29E0092E721 /* ReferenceCountedObject.hpp */,
 				1DB210E31D04F29E0092E721 /* StringHash.cpp */,
 				1DB210E41D04F29E0092E721 /* StringHash.hpp */,
-				1DB2112F1D079BF50092E721 /* StringHash.inl */,
 				1DB210E51D04F29E0092E721 /* UserInfo.cpp */,
 				1DB210E61D04F29E0092E721 /* UserInfo.hpp */,
 				1DB2112C1D0792320092E721 /* Log.cpp */,
@@ -573,6 +573,7 @@
 				1DB210A31D04F0D60092E721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

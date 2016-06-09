@@ -22,7 +22,7 @@ namespace utils {
     /**
      * The message receivers grouped by the message code.
      */
-    typedef std::map<StringHash, MessageReceiverVector> MessageReceiversByCode;
+    typedef std::map<hash_t, MessageReceiverVector> MessageReceiversByCode;
     
     /**
      * The message receivers grouped by the sender.
@@ -41,7 +41,7 @@ namespace {
      */
     void erase(MessageReceiversBySender & message_receivers,
                const ISender * sender,
-               const StringHash & code,
+               const hash_t code,
                MessageReceiverVector::iterator & iter) {
         message_receivers[ sender ][ code ].erase(iter);
         if(message_receivers.size() == 0) {
@@ -75,15 +75,16 @@ namespace {
         delete m_private_implementation;
     }
     
-    void Messaging::addMessageReceiver(IMessageReceiver * message_receiver,
-                                       StringHash code,
-                                       const ISender * sender) {
+    Messaging & Messaging::addMessageReceiver(IMessageReceiver * message_receiver,
+                                              hash_t code,
+                                              const ISender * sender) {
         m_private_implementation->message_receivers[ sender ][ code ].push_back(message_receiver);
+        return *this;
     }
     
-    void Messaging::removeMessageReceiver(IMessageReceiver * message_receiver,
-                                          StringHash code,
-                                          const ISender * sender) {
+    Messaging & Messaging::removeMessageReceiver(IMessageReceiver * message_receiver,
+                                                 hash_t code,
+                                                 const ISender * sender) {
         MessageReceiverVector & message_receivers =
                 m_private_implementation->message_receivers[ sender ][ code ];
         for(std::vector<IMessageReceiver *>::iterator iter = message_receivers.begin();
@@ -97,9 +98,10 @@ namespace {
                       iter);
             }
         }
+        return *this;
     }
     
-    void Messaging::removeMessageReceiver(IMessageReceiver * message_receiver) {
+    Messaging & Messaging::removeMessageReceiver(IMessageReceiver * message_receiver) {
         for(MessageReceiversBySender::iterator by_sender_iter =
                     m_private_implementation->message_receivers.begin(),
             by_sender_end = m_private_implementation->message_receivers.end();
@@ -127,9 +129,10 @@ namespace {
                 }
             }
         }
+        return *this;
     }
     
-    void Messaging::post(StringHash code,
+    void Messaging::post(hash_t code,
                          const ISender * sender,
                          const UserInfo * user_info) const {
         Message message = { code, sender, user_info };
@@ -140,7 +143,7 @@ namespace {
         MessageReceiversBySender & all_message_receivers =
         m_private_implementation->message_receivers;
         const ISender * sender = message.sender;
-        const StringHash & code = message.code;
+        const hash_t code = message.code;
         
         std::set<IMessageReceiver *> message_receivers;
         insertAllIntoSet(message_receivers,

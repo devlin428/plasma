@@ -23,7 +23,7 @@ namespace utils {
 namespace game {
     struct MatchContext;
     
-    const kettle::utils::StringHash kSpawnFailed("Spawn Failed");
+    const kettle::utils::hash_t kSpawnFailed = kettle::utils::hashCString("Spawn Failed");
     
     /**
      * Spawns a piece.

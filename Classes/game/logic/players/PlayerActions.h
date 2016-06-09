@@ -17,33 +17,33 @@ namespace game {
          * Type to specify to the player the current phase to know what actions
          * are legal.
          */
-        typedef kettle::utils::StringHash phase_t;
+        typedef kettle::utils::hash_t phase_t;
         
         /**
          * Type for keying parameters for a player acting for a phase.
          */
-        typedef kettle::utils::StringHash player_parameter_key_t;
+        typedef kettle::utils::hash_t player_parameter_key_t;
         
         /**
          * Type for the player's actions.
          */
-        typedef kettle::utils::StringHash action_t;
+        typedef kettle::utils::hash_t action_t;
         
         /**
          * Type for keying parameters for a player action.
          */
-        typedef kettle::utils::StringHash action_parameter_key_t;
+        typedef kettle::utils::hash_t action_parameter_key_t;
         
         /**
          * Common action for the player to not make a move right now.
          */
-        const action_t kThinking("Thinking");
-        
+        const action_t kThinking = kettle::utils::hashCString("Thinking");
+
         /**
          * Common action for leaving a game abrubtly. The phase rules should
          * handle this action whenever the player can act.
          */
-        const action_t kSurrender("Surrender");
+        const action_t kSurrender = kettle::utils::hashCString("Surrender");
     } // namespace player_action
 } // namespace game
 

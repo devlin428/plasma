@@ -28,7 +28,7 @@ namespace utils {
         /**
          * Gets the type of the sender for downcasting.
          */
-        virtual StringHash getType() const = 0;
+        virtual hash_t getType() const = 0;
         
     protected:
         /**
@@ -49,7 +49,7 @@ namespace utils {
         /**
          * The message code.
          */
-        StringHash code;
+        hash_t code;
         
         /**
          * The sender of the message. May be null.
@@ -92,7 +92,7 @@ namespace utils {
     /**
      * Value to specify that any message can be received.
      */
-    const StringHash kMessageCodeAny("any message");
+    const hash_t kMessageCodeAny = hashCString("any message");
     
     /**
      * A messaging system.
@@ -118,10 +118,11 @@ namespace utils {
          *                          message codes.
          * @param sender            The sender the receiver can obtain. Set to
          *                          null to receive from any sender.
+         * @return                  This instance.
          */
-        void addMessageReceiver(IMessageReceiver * message_receiver,
-                                StringHash code = kMessageCodeAny,
-                                const ISender * sender = nullptr);
+        Messaging & addMessageReceiver(IMessageReceiver * message_receiver,
+                                       hash_t code = kMessageCodeAny,
+                                       const ISender * sender = nullptr);
         
         /**
          * Removes a message reciever.
@@ -129,17 +130,19 @@ namespace utils {
          * @param message_receiver  The receiver to get messages.
          * @param code              The message code that was registered.
          * @param sender            The sender that was registered.
+         * @return                  This instance.
          */
-        void removeMessageReceiver(IMessageReceiver * message_receiver,
-                                   StringHash code = kMessageCodeAny,
-                                   const ISender * sender = nullptr);
+        Messaging & removeMessageReceiver(IMessageReceiver * message_receiver,
+                                          hash_t code = kMessageCodeAny,
+                                          const ISender * sender = nullptr);
         
         /**
          * Removes a message reciever from receiving any messages.
          *
          * @param message_receiver  The receiver to get messages.
+         * @return                  This instance.
          */
-        void removeMessageReceiver(IMessageReceiver * message_receiver);
+        Messaging & removeMessageReceiver(IMessageReceiver * message_receiver);
         
         /**
          * Send a message.
@@ -147,8 +150,9 @@ namespace utils {
          * @param code          The message code.
          * @param sender        The sender of the message.
          * @param user_info     Extra info of the message.
+         * @return              This instance.
          */
-        void post(StringHash code,
+        void post(hash_t code,
                   const ISender * sender = nullptr,
                   const UserInfo * user_info = nullptr) const;
         
@@ -156,6 +160,7 @@ namespace utils {
          * Send a message.
          *
          * @param message   The message.
+         * @return          This instance.
          */
         void post(const Message & message) const;
         

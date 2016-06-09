@@ -117,7 +117,7 @@ namespace {
         }
         
         bool setPieceAt(IPiece * piece, positionid_t position_id) {
-            printf("Piece 0x%lx set at %d.\n", (long)piece, position_id);
+            piece->setPositionId(position_id);
             return true;
         }
         

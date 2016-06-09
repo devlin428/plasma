@@ -14,13 +14,6 @@
 namespace game {
     struct MatchContext;
     
-    namespace on_surrender_parameters {
-        /**
-         * Message user info key for the player index.
-         */
-        const kettle::utils::StringHash kMessageKeyPlayerIndex("Player index");
-    }
-    
     /**
      * Handles the current player surrendering. Sends this event as a message.
      *

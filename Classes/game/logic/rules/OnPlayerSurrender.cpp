@@ -13,11 +13,12 @@
 
 #include "MatchContext.hpp"
 #include "PlayerActions.h"
+#include "MessageKeys.h"
 
 namespace game {
     void onPlayerSurrender(MatchContext * context) {
         kettle::utils::UserInfo info;
-        info.put(on_surrender_parameters::kMessageKeyPlayerIndex, context->current_player_turn);
+        info.put(kMessageKeyPlayerIndex, context->current_player_turn);
         context->messaging->post(player_action::kSurrender, nullptr, &info);
     }
 } // namespace game

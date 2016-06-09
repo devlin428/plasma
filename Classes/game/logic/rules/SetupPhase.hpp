@@ -17,8 +17,7 @@
 #include "BoardTypes.h"
 
 namespace game {
-    const kettle::utils::StringHash kPlayerFinishedSetup("Player finished setup");
-    const kettle::utils::StringHash kMessageKeyPlayerIndex("Player index");
+    const kettle::utils::hash_t kPlayerFinishedSetup = kettle::utils::hashCString("Player finished setup");
     
     /**
      * Struct for creating the setup phase easier.
@@ -117,12 +116,12 @@ namespace game {
         /**
          * Gets the type of this class.
          */
-        kettle::utils::StringHash getType() const;
+        kettle::utils::hash_t getType() const;
         
         /**
          * Gets the type of this class.
          */
-        static kettle::utils::StringHash getClassType();
+        static kettle::utils::hash_t getClassType();
         
     protected:
         /**
