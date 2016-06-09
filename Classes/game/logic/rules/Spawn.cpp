@@ -52,7 +52,7 @@ namespace {
                const kettle::utils::UserInfo * action_parameters) {
         if(context->board->setPieceAt(piece, spawn_position_id)) {
             if(context->addPieceToCurrentPlayer(piece)) {
-                context->messaging->post(game::player_action::kSpawn,
+                context->messaging->post(game::action::kSpawn,
                                          message_sender,
                                          action_parameters);
             }
@@ -153,11 +153,11 @@ namespace game {
                     const unsigned int * spawn_position_count_by_player_index,
                     const kettle::utils::ISender * message_sender,
                     const kettle::utils::UserInfo * action_parameters) {
-        if(action_parameters->isKeyOfType(player_action::kPieceType, kettle::utils::kUserInfoTypeInt) &&
-           action_parameters->isKeyOfType(player_action::kPositionIndex, kettle::utils::kUserInfoTypeInt))
+        if(action_parameters->isKeyOfType(action::kPieceType, kettle::utils::kUserInfoTypeInt) &&
+           action_parameters->isKeyOfType(action::kPositionIndex, kettle::utils::kUserInfoTypeInt))
         {
-            unsigned int type = action_parameters->getInt(game::player_action::kPieceType);
-            unsigned int spawn_position_index = action_parameters->getInt(game::player_action::kPositionIndex);
+            unsigned int type = action_parameters->getInt(game::action::kPieceType);
+            unsigned int spawn_position_index = action_parameters->getInt(game::action::kPositionIndex);
             spawn(context,
                   spawn_positions_by_player_index,
                   spawn_position_count_by_player_index,

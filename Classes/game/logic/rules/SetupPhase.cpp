@@ -40,7 +40,7 @@ namespace {
                              kettle::utils::UserInfo & player_parameters) {
         const game::positionid_t * spawn_positions = spawn_positions_by_player_index[ context->current_player_turn ];
         unsigned int spawn_position_count = spawn_position_count_by_player_index[ context->current_player_turn ];
-        player_parameters.put(game::player_action::kSpawnLocations, spawn_positions, spawn_position_count);
+        player_parameters.put(game::action::kSpawnLocations, spawn_positions, spawn_position_count);
     }
     
     /**
@@ -61,13 +61,13 @@ namespace {
      * @param o_action_parameters   The parameters for the player's action.
      * @return                      The player's action.
      */
-    game::player_action::action_t act(game::MatchContext * context,
-                                      const kettle::utils::UserInfo & player_parameters,
-                                      kettle::utils::UserInfo * o_action_parameters) {
+    game::action::action_t act(game::MatchContext * context,
+                               const kettle::utils::UserInfo & player_parameters,
+                               kettle::utils::UserInfo * o_action_parameters) {
         o_action_parameters->clear();
         game::IPlayer * player = context->getCurrentPlayer();
         return player->act(context,
-                           game::player_action::kSetupPhase,
+                           game::action::kSetupPhase,
                            &player_parameters,
                            o_action_parameters);
     }
@@ -146,10 +146,10 @@ namespace game {
                            const spaces_t * spawn_position_count_by_player_index,
                            unsigned int player_count,
                            unsigned int first_turn_after_setup_player_index) :
-            m_spawn_positions_by_player_index(spawn_positions_by_player_index),
-            m_spawn_position_count_by_player_index(spawn_position_count_by_player_index),
-            m_player_count(player_count),
-            m_first_turn_after_setup_player_index(first_turn_after_setup_player_index) {}
+    m_spawn_positions_by_player_index(spawn_positions_by_player_index),
+    m_spawn_position_count_by_player_index(spawn_position_count_by_player_index),
+    m_player_count(player_count),
+    m_first_turn_after_setup_player_index(first_turn_after_setup_player_index) {}
     
     SetupPhase::~SetupPhase() {
         if(m_spawn_positions_by_player_index) {
@@ -178,24 +178,24 @@ namespace game {
                             player_parameters);
         
         while(canCurrentPlayerPlaceMore(context)) {
-            player_action::action_t action = act(context,
-                                                 player_parameters,
-                                                 &action_parameters);
+            action::action_t action = act(context,
+                                          player_parameters,
+                                          &action_parameters);
             
-            if(action == player_action::kThinking) {
+            if(action == action::kThinking) {
                 return kPhaseUpdateBreakReasonWaitingOnPlayer;
             }
-            else if(action == player_action::kSpawn) {
+            else if(action == action::kSpawn) {
                 spawnPiece(context,
                            m_spawn_positions_by_player_index,
                            m_spawn_position_count_by_player_index,
                            this,
                            &action_parameters);
             }
-            else if(action == player_action::kFinishedSpawning) {
+            else if(action == action::kFinishedSpawning) {
                 break;
             }
-            else if(action == player_action::kSurrender) {
+            else if(action == action::kSurrender) {
                 onPlayerSurrender(context);
             }
         }

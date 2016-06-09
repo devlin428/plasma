@@ -19,6 +19,6 @@ namespace game {
     void onPlayerSurrender(MatchContext * context) {
         kettle::utils::UserInfo info;
         info.put(kMessageKeyPlayerIndex, context->current_player_turn);
-        context->messaging->post(player_action::kSurrender, nullptr, &info);
+        context->messaging->post(action::kSurrender, nullptr, &info);
     }
 } // namespace game

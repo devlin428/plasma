@@ -21,10 +21,12 @@
 #include "IPiece.hpp"
 #include "PlayerActionsSetup.h"
 
+#include "TestPhase.hpp"
+
 using namespace std;
 using namespace kettle::utils;
 using namespace game;
-using namespace game::player_action;
+using namespace game::action;
 
 namespace {
     class TestPiece : public IPiece {
@@ -53,6 +55,13 @@ namespace {
         spaces_t getMaxMovementDistance() const {
             return 0;
         }
+        
+        action::action_t act(const MatchContext * context,
+                             action::phase_t phase,
+                             const kettle::utils::UserInfo * phase_info,
+                             kettle::utils::UserInfo * o_action_info) {
+            return phase;
+        }
     protected:
         unsigned int m_type;
         positionid_t m_position_id;
@@ -63,10 +72,10 @@ namespace {
         TestPlayer() {}
         ~TestPlayer() {}
         
-        player_action::action_t act(const MatchContext * context,
-                                    player_action::phase_t phase,
-                                    const kettle::utils::UserInfo * phase_info,
-                                    kettle::utils::UserInfo * o_action_info) {
+        action_t act(const MatchContext * context,
+                     action::phase_t phase,
+                     const kettle::utils::UserInfo * phase_info,
+                     kettle::utils::UserInfo * o_action_info) {
             static int action = -1;
             action = (action+1) % 4;
             switch (action) {
@@ -139,32 +148,6 @@ namespace {
         }
     }; // class TestBoard : public IBoard
     
-    void runPhase(MatchContext & context, IPhaseRule * phase) {
-        phase->initialize(&context);
-        
-        PhaseUpdateBreakReason reason;
-        while(true) {
-            reason = phase->update(&context);
-            switch (reason) {
-                case game::kPhaseUpdateBreakReasonPhaseEndQuicksavePoint:
-                    cout << "Phase ended with a quicksave point." << endl;
-                    return;
-                    
-                case game::kPhaseUpdateBreakReasonQuicksavePoint:
-                    cout << "Quicksave point" << endl;
-                    break;
-                    
-                case game::kPhaseUpdateBreakReasonPhaseEnd:
-                    cout << "Phase ended." << endl;
-                    return;
-                    
-                case game::kPhaseUpdateBreakReasonWaitingOnPlayer:
-                    cout << "Waiting on player " << context.current_player_turn << endl;
-                    break;
-            }
-        }
-    }
-    
     void runPhase(IPhaseRule * phase) {
         TestPlayer player1, player2;
         IPlayer * players[] = {
@@ -195,7 +178,7 @@ namespace {
             1
         };
         
-        runPhase(context, phase);
+        testPhase(&context, phase);
         
         delete context.messaging;
         

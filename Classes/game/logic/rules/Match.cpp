@@ -38,6 +38,14 @@ namespace game {
         IPiece ** all_pieces = new IPiece*[ max_pieces ];
         IPiece *** pieces_by_player = new IPiece**[ number_of_players ];
         
+        // Initialize the piece pointers with null.
+        for(IPiece ** piece_ptr = all_pieces,
+            **end = all_pieces + max_pieces;
+            piece_ptr != end;
+            ++piece_ptr) {
+            piece_ptr = nullptr;
+        }
+        
         // Set pieces_by_player to point into all pieces.
         const unsigned int * max_pieces_iter = max_pieces_by_player;
         for(IPiece *** piece_ptr_array_iter = pieces_by_player,

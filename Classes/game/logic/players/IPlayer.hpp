@@ -26,10 +26,10 @@ namespace game {
     public:
         virtual ~IPlayer() {}
         
-        virtual player_action::action_t act(const MatchContext * context,
-                                            player_action::phase_t phase,
-                                            const kettle::utils::UserInfo * phase_info,
-                                            kettle::utils::UserInfo * o_action_info) = 0;
+        virtual action::action_t act(const MatchContext * context,
+                                     action::phase_t phase,
+                                     const kettle::utils::UserInfo * phase_info,
+                                     kettle::utils::UserInfo * o_action_info) = 0;
         
         virtual IPiece * spawn(unsigned int type) = 0;
         

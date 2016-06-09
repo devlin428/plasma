@@ -12,7 +12,7 @@
 #include "PlayerActions.h"
 
 namespace game {
-namespace player_action {
+namespace action {
     const phase_t kSetupPhase = kettle::utils::hashCString("Setup");
     
     const player_parameter_key_t kSpawnLocations = kettle::utils::hashCString("Locations");
@@ -22,7 +22,7 @@ namespace player_action {
     const action_parameter_key_t kPositionIndex = kettle::utils::hashCString("Position Index");
     
     const action_t kFinishedSpawning = kettle::utils::hashCString("Finished spawning.");
-} // namespace player_action
+} // namespace action
 } // namespace game
 
 #endif /* PlayerActionsSetup__h */

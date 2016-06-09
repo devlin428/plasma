@@ -12,7 +12,7 @@
 #include "StringHash.hpp"
 
 namespace game {
-    namespace player_action {
+    namespace action {
         /**
          * Type to specify to the player the current phase to know what actions
          * are legal.
@@ -44,7 +44,7 @@ namespace game {
          * handle this action whenever the player can act.
          */
         const action_t kSurrender = kettle::utils::hashCString("Surrender");
-    } // namespace player_action
+    } // namespace action
 } // namespace game
 
 #endif /* PlayerActions_h */
