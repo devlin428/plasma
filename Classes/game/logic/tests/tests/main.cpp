@@ -11,6 +11,7 @@
 #include "TestPhaseRulesByInterfaces.hpp"
 #include "TestPhaseSetup.hpp"
 #include "TestPhaseAllPiecesAct.hpp"
+#include "TestPhaseEnd.hpp"
 
 int main(int argc, const char * argv[]) {
     testMatch();
@@ -18,5 +19,6 @@ int main(int argc, const char * argv[]) {
     testPhaseRulesByInterfaces();
     testSetupPhase();
     TestPhaseAllPiecesAct();
+    testPhaseEnd();
     return 0;
 }

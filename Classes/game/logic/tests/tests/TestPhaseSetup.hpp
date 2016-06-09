@@ -10,7 +10,7 @@
 #define TestPhaseSetup_hpp
 
 /**
- * Tests the setup phase.
+ * Tests SetupPhase.
  */
 int testSetupPhase();
 /**

@@ -10,7 +10,7 @@
 #define TestPhaseAllPiecesAct_hpp
 
 /**
- * Tests all pieces acting for the phase.
+ * Tests PhaseAllPlayerPiecesAct.
  */
 int TestPhaseAllPiecesAct();
 /**

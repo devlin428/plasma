@@ -51,6 +51,7 @@
 		1DB211461D09CFDB0092E721 /* PhaseEndTurn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211441D09CFDB0092E721 /* PhaseEndTurn.cpp */; };
 		1DB2114C1D0A21D90092E721 /* TestPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2114A1D0A21D90092E721 /* TestPhase.cpp */; };
 		1DB2114F1D0A226E0092E721 /* TestPhaseAllPiecesAct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2114D1D0A226E0092E721 /* TestPhaseAllPiecesAct.cpp */; };
+		1DB211521D0A34FE0092E721 /* TestPhaseEnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211501D0A34FE0092E721 /* TestPhaseEnd.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -163,6 +164,8 @@
 		1DB2114B1D0A21D90092E721 /* TestPhase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhase.hpp; sourceTree = "<group>"; };
 		1DB2114D1D0A226E0092E721 /* TestPhaseAllPiecesAct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPhaseAllPiecesAct.cpp; sourceTree = "<group>"; };
 		1DB2114E1D0A226E0092E721 /* TestPhaseAllPiecesAct.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhaseAllPiecesAct.hpp; sourceTree = "<group>"; };
+		1DB211501D0A34FE0092E721 /* TestPhaseEnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPhaseEnd.cpp; sourceTree = "<group>"; };
+		1DB211511D0A34FE0092E721 /* TestPhaseEnd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhaseEnd.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +213,8 @@
 				1DB211311D07CAA40092E721 /* TestPhaseSetup.hpp */,
 				1DB2114D1D0A226E0092E721 /* TestPhaseAllPiecesAct.cpp */,
 				1DB2114E1D0A226E0092E721 /* TestPhaseAllPiecesAct.hpp */,
+				1DB211501D0A34FE0092E721 /* TestPhaseEnd.cpp */,
+				1DB211511D0A34FE0092E721 /* TestPhaseEnd.hpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DB210E71D04F29E0092E721 /* Messaging.cpp in Sources */,
+				1DB211521D0A34FE0092E721 /* TestPhaseEnd.cpp in Sources */,
 				1DB211021D04F3120092E721 /* IMatchCondition.cpp in Sources */,
 				1DB211281D0669C00092E721 /* OnPlayerSurrender.cpp in Sources */,
 				1DB211321D07CAA40092E721 /* TestPhaseSetup.cpp in Sources */,
