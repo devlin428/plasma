@@ -1,0 +1,32 @@
+Setup:
+	Each player in turn places all pieces
+	Computer first
+	Coin flip in VS determines order
+
+Turn Order:
+	Human over computer
+	The order in setup
+
+Turn:
+	* Selects 1 unit
+		* Move unit across the board
+		* Attack
+
+Upkeep:
+	Each unit gain energy by Max / (Current Units - 2)
+
+Unit Stats:
+	HP
+	Attack
+	Defence
+	Energy
+	Movement limit
+	Attack range
+	Movement Energy Cost
+	Attack Energy Cost
+
+Battle calculation:
+	Attack - Defense = Damage to HP
+
+Goal:
+	Reach a square
