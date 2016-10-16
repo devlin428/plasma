@@ -23,6 +23,9 @@ namespace utils {
 namespace game {
     struct MatchContext;
     
+    /**
+     * Message for a spawn action failing.
+     */
     const kettle::utils::hash_t kSpawnFailed = kettle::utils::hashCString("Spawn Failed");
     
     /**

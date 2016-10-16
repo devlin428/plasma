@@ -13,15 +13,34 @@
 
 namespace game {
 namespace action {
-    const phase_t kSetupPhase = kettle::utils::hashCString("Setup");
+    /**
+     * The setup phase. The actions that can be performed are kSpawn and
+     * kFinishedSpawning.
+     *
+     * parameter UserInfo:
+     * @key kSpawnLocations     An array of position IDs of the valid spawn
+     *                          locations.
+     */
+    const phase_t kSetupPhase = action::hash("Setup");
     
-    const player_parameter_key_t kSpawnLocations = kettle::utils::hashCString("Locations");
+    /**
+     * A UserInfo key to an array of position IDs of valid spawn positions.
+     */
+    const player_parameter_key_t kSpawnLocations = action::hash("Locations");
     
-    const action_t kSpawn = kettle::utils::hashCString("Spawn");
-    const action_parameter_key_t kPieceType = kettle::utils::hashCString("Type");
-    const action_parameter_key_t kPositionIndex = kettle::utils::hashCString("Position Index");
+    /**
+     * An action to spawn a piece.
+     *
+     * returned UserInfo:
+     * @key kPieceType      The type of the piece to spawn.
+     * @key kPositionIndex  The index of the spawn position in the array 
+     *                      kSpawnLocations.
+     */
+    const action_t kSpawn = action::hash("Spawn");
+    const action_parameter_key_t kPieceType = action::hash("Type");
+    const action_parameter_key_t kPositionIndex = action::hash("Position Index");
     
-    const action_t kFinishedSpawning = kettle::utils::hashCString("Finished spawning.");
+    const action_t kFinishedSpawning = action::hash("Finished spawning.");
 } // namespace action
 } // namespace game
 

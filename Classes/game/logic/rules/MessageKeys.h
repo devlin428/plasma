@@ -15,7 +15,7 @@ namespace game {
     /**
      * Message user info key for the player index.
      */
-    const kettle::utils::hash_t kMessageKeyPlayerIndex = kettle::utils::hashCString("Player index");
+    const kettle::utils::hash_t kMessageKeyPlayerIndex = action::hash("Player index");
 }
 
 #endif /* MessageKeys_h */

@@ -17,6 +17,12 @@
 #include "BoardTypes.h"
 
 namespace game {
+    /**
+     * Messages for that a player has finished their setup.
+     *
+     * UserInfo:
+     * @key game::kMessageKeyPlayerIndex    The player's index.
+     */
     const kettle::utils::hash_t kPlayerFinishedSetup = kettle::utils::hashCString("Player finished setup");
     
     /**

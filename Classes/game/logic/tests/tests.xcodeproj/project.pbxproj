@@ -52,6 +52,7 @@
 		1DB2114C1D0A21D90092E721 /* TestPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2114A1D0A21D90092E721 /* TestPhase.cpp */; };
 		1DB2114F1D0A226E0092E721 /* TestPhaseAllPiecesAct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2114D1D0A226E0092E721 /* TestPhaseAllPiecesAct.cpp */; };
 		1DB211521D0A34FE0092E721 /* TestPhaseEnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB211501D0A34FE0092E721 /* TestPhaseEnd.cpp */; };
+		1DB211611D0B1C1E0092E721 /* Flags32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2115F1D0B1C1E0092E721 /* Flags32.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,7 +156,6 @@
 		1DB211351D08794A0092E721 /* Spawn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Spawn.hpp; path = ../rules/Spawn.hpp; sourceTree = "<group>"; };
 		1DB211371D0904C30092E721 /* MessageKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageKeys.h; path = ../rules/MessageKeys.h; sourceTree = "<group>"; };
 		1DB2113E1D09CD900092E721 /* PlayerTurnPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerTurnPhase.cpp; path = ../rules/PlayerTurnPhase.cpp; sourceTree = "<group>"; };
-		1DB2113F1D09CD900092E721 /* PlayerTurnPhase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PlayerTurnPhase.hpp; path = ../rules/PlayerTurnPhase.hpp; sourceTree = "<group>"; };
 		1DB211411D09CE3A0092E721 /* PhaseAllPlayerPiecesAct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhaseAllPlayerPiecesAct.cpp; path = ../rules/PhaseAllPlayerPiecesAct.cpp; sourceTree = "<group>"; };
 		1DB211421D09CE3A0092E721 /* PhaseAllPlayerPiecesAct.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PhaseAllPlayerPiecesAct.hpp; path = ../rules/PhaseAllPlayerPiecesAct.hpp; sourceTree = "<group>"; };
 		1DB211441D09CFDB0092E721 /* PhaseEndTurn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhaseEndTurn.cpp; path = ../rules/PhaseEndTurn.cpp; sourceTree = "<group>"; };
@@ -166,6 +166,11 @@
 		1DB2114E1D0A226E0092E721 /* TestPhaseAllPiecesAct.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhaseAllPiecesAct.hpp; sourceTree = "<group>"; };
 		1DB211501D0A34FE0092E721 /* TestPhaseEnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPhaseEnd.cpp; sourceTree = "<group>"; };
 		1DB211511D0A34FE0092E721 /* TestPhaseEnd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestPhaseEnd.hpp; sourceTree = "<group>"; };
+		1DB2115F1D0B1C1E0092E721 /* Flags32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Flags32.cpp; path = ../../../kettle/utils/Flags32.cpp; sourceTree = "<group>"; };
+		1DB211601D0B1C1E0092E721 /* Flags32.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Flags32.hpp; path = ../../../kettle/utils/Flags32.hpp; sourceTree = "<group>"; };
+		1DB211621D0F1A460092E721 /* PlayerActionTurn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlayerActionTurn.h; path = ../players/PlayerActionTurn.h; sourceTree = "<group>"; };
+		1DB95EBF1DB44555002C8EEF /* PlayerActions.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = PlayerActions.inl; path = ../players/PlayerActions.inl; sourceTree = "<group>"; };
+		1DB95EC01DB44602002C8EEF /* PlayerTurnPhase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PlayerTurnPhase.hpp; path = ../rules/PlayerTurnPhase.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +326,8 @@
 				1DB210E61D04F29E0092E721 /* UserInfo.hpp */,
 				1DB2112C1D0792320092E721 /* Log.cpp */,
 				1DB2112D1D0792320092E721 /* Log.hpp */,
+				1DB2115F1D0B1C1E0092E721 /* Flags32.cpp */,
+				1DB211601D0B1C1E0092E721 /* Flags32.hpp */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -328,10 +335,12 @@
 		1DB210EB1D04F2AC0092E721 /* players */ = {
 			isa = PBXGroup;
 			children = (
-				1DB211211D062E310092E721 /* PlayerActions.h */,
-				1DB211251D065F150092E721 /* PlayerActionsSetup.h */,
 				1DB210EC1D04F2D40092E721 /* IPlayer.cpp */,
 				1DB210ED1D04F2D40092E721 /* IPlayer.hpp */,
+				1DB211211D062E310092E721 /* PlayerActions.h */,
+				1DB95EBF1DB44555002C8EEF /* PlayerActions.inl */,
+				1DB211251D065F150092E721 /* PlayerActionsSetup.h */,
+				1DB211621D0F1A460092E721 /* PlayerActionTurn.h */,
 			);
 			name = players;
 			sourceTree = "<group>";
@@ -372,7 +381,7 @@
 				1DB211411D09CE3A0092E721 /* PhaseAllPlayerPiecesAct.cpp */,
 				1DB211421D09CE3A0092E721 /* PhaseAllPlayerPiecesAct.hpp */,
 				1DB2113E1D09CD900092E721 /* PlayerTurnPhase.cpp */,
-				1DB2113F1D09CD900092E721 /* PlayerTurnPhase.hpp */,
+				1DB95EC01DB44602002C8EEF /* PlayerTurnPhase.hpp */,
 				1DB211441D09CFDB0092E721 /* PhaseEndTurn.cpp */,
 				1DB211451D09CFDB0092E721 /* PhaseEndTurn.hpp */,
 			);
@@ -472,6 +481,7 @@
 				1DB211031D04F3120092E721 /* IPhaseRules.cpp in Sources */,
 				1DB210EA1D04F29E0092E721 /* UserInfo.cpp in Sources */,
 				1DB211461D09CFDB0092E721 /* PhaseEndTurn.cpp in Sources */,
+				1DB211611D0B1C1E0092E721 /* Flags32.cpp in Sources */,
 				1DB211361D08794A0092E721 /* Spawn.cpp in Sources */,
 				1DB211051D04F3120092E721 /* MatchConditionBuilder.cpp in Sources */,
 				1DB210C31D04F23F0092E721 /* Vector2d.cpp in Sources */,
